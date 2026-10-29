@@ -1,0 +1,6 @@
+{
+  "name": "InvestLAH",
+  "description": "Gen Z Money Playbook — Interactive financial literacy and investing simulator for Malaysian university students.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
