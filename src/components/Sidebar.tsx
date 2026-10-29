@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { Monitor, Tablet, Smartphone } from 'lucide-react';
 
 export type TabId =
   | 't1'
@@ -124,71 +125,68 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
   return (
     <>
-      {/* Global Sticky Top Navbar */}
-      <header className="sticky top-0 z-40 w-full bg-white border-b-[3px] border-black px-3 sm:px-6 py-2.5">
+      {/* Top Trigger Bar on Main Screen */}
+      <header className="sticky top-0 z-40 w-full bg-[#F7F9F6]/95 backdrop-blur-xs border-b-[3px] border-black px-3 sm:px-6 py-2.5">
         <div className="max-w-5xl mx-auto flex items-center justify-between gap-2 sm:gap-4 flex-wrap">
           <div className="flex items-center gap-2 sm:gap-3">
             {/* Trigger Button: Menu Tab */}
             <motion.button
               type="button"
               onClick={onToggle}
-              whileHover={{ x: -1, y: -1 }}
-              whileTap={{ x: 4, y: 4 }}
-              className="inline-flex items-center gap-2 px-3.5 py-2 bg-[#FDE047] border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none font-black text-xs sm:text-sm text-black cursor-pointer select-none whitespace-nowrap"
+              whileHover={{ x: -2, y: -2 }}
+              whileTap={{ x: 3, y: 3 }}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-[#FEF08A] border-[3px] border-black rounded-2xl shadow-[4px_4px_0px_#000000] active:shadow-none font-extrabold text-sm sm:text-base text-black cursor-pointer select-none whitespace-nowrap"
             >
-              <span className="text-lg leading-none font-black">≡</span>
+              <span className="text-xl leading-none font-black">≡</span>
               <span>Menu Tab</span>
             </motion.button>
 
-            {/* Brand Pill */}
-            <button
-              type="button"
-              onClick={() => onSelectTab('t1')}
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-[#10D989] border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1 active:shadow-none font-black text-xs sm:text-sm text-black whitespace-nowrap cursor-pointer"
+            {/* Desktop / Tablet / Mobile Viewport Switcher */}
+            <div
+              className="inline-flex items-center bg-white border-[3px] border-black rounded-2xl shadow-[4px_4px_0px_#000000] p-1 gap-1"
+              role="group"
+              aria-label="Switch viewport size"
             >
-              <span>⚡ InvestLAH</span>
-            </button>
+              {(
+                [
+                  { id: 'desktop', label: 'Desktop', Icon: Monitor },
+                  { id: 'tablet', label: 'Tablet', Icon: Tablet },
+                  { id: 'mobile', label: 'Mobile', Icon: Smartphone },
+                ] as const
+              ).map(({ id, label, Icon }) => {
+                const isActive = viewportMode === id;
+                return (
+                  <button
+                    key={id}
+                    type="button"
+                    onClick={() => onChangeViewport(id)}
+                    title={`Switch to ${label} view`}
+                    className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl font-extrabold text-xs transition-all cursor-pointer whitespace-nowrap ${
+                      isActive
+                        ? 'bg-[#10D989] text-black border-[2px] border-black shadow-[2px_2px_0px_#000000]'
+                        : 'text-slate-600 hover:bg-[#FEF08A] hover:text-black border-[2px] border-transparent'
+                    }`}
+                  >
+                    <Icon className="w-3.5 h-3.5 shrink-0" />
+                    <span className="hidden md:inline">{label}</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
           {/* Current Active Module Indicator */}
-          <div className="hidden lg:flex items-center gap-2 px-3.5 py-1.5 bg-[#F3F4F6] border-[3px] border-black rounded-xl font-extrabold text-xs text-black">
+          <div className="hidden lg:flex items-center gap-2 px-3.5 py-1.5 bg-white border-[2px] border-black rounded-full shadow-[3px_3px_0px_#000000] font-extrabold text-xs">
             <span>{activeModule.emoji}</span>
             <span>{activeModule.title}</span>
-            <span className="text-neutral-600 font-bold">
+            <span className="text-slate-500 font-bold">
               · {activeModule.subtitle}
             </span>
           </div>
 
-          {/* Viewport Toggle Group (Desktop 💻 | Tablet 📱 | Mobile 📲) */}
-          <div
-            className="inline-flex items-center bg-[#F3F4F6] border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-1 gap-1"
-            role="group"
-            aria-label="Switch viewport size"
-          >
-            {(
-              [
-                { id: 'desktop', label: 'Desktop 💻' },
-                { id: 'tablet', label: 'Tablet 📱' },
-                { id: 'mobile', label: 'Mobile 📲' },
-              ] as const
-            ).map(({ id, label }) => {
-              const isActive = viewportMode === id;
-              return (
-                <button
-                  key={id}
-                  type="button"
-                  onClick={() => onChangeViewport(id)}
-                  title={`Switch to ${label}`}
-                  className={`px-2.5 py-1 rounded-lg font-black text-xs transition-all cursor-pointer whitespace-nowrap ${
-                    isActive
-                      ? 'bg-[#3B82F6] text-white border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]'
-                      : 'text-black hover:bg-[#FDE047] border-[2px] border-transparent'
-                  }`}
-                >
-                  {label}
-                </button>
-              );
-            })}
+          {/* Brand Pill */}
+          <div className="flex items-center gap-1.5 px-3.5 py-1.5 bg-[#10D989] border-[3px] border-black rounded-full shadow-[3px_3px_0px_#000000] font-extrabold text-xs sm:text-sm whitespace-nowrap">
+            <span>⚡ InvestLAH</span>
           </div>
         </div>
       </header>
@@ -203,9 +201,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.18 }}
+              transition={{ duration: 0.2 }}
               onClick={onClose}
-              className="fixed inset-0 bg-black/65 z-50 cursor-pointer"
+              className="fixed inset-0 bg-black/60 z-50 cursor-pointer"
               aria-label="Close sidebar overlay"
             />
 
@@ -215,44 +213,52 @@ export const Sidebar: React.FC<SidebarProps> = ({
               initial={{ x: '-100%' }}
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
-              transition={{ type: 'spring', stiffness: 360, damping: 32 }}
-              className="fixed top-0 left-0 bottom-0 w-full max-w-[360px] bg-white border-r-[3px] border-black shadow-[8px_0px_0px_0px_rgba(0,0,0,1)] z-50 flex flex-col justify-between overflow-y-auto p-4 sm:p-5 gap-4"
+              transition={{ type: 'spring', stiffness: 320, damping: 30 }}
+              className="fixed top-0 left-0 bottom-0 w-full max-w-[370px] bg-[#F7F9F6] border-r-[3px] border-black shadow-[8px_0px_0px_#000000] z-50 flex flex-col justify-between overflow-y-auto p-4 sm:p-5 gap-5"
             >
               {/* 1. Header Section */}
               <div className="flex flex-col gap-4">
                 <div className="flex items-center justify-between gap-2">
-                  {/* Logo Badge */}
-                  <div className="flex flex-col px-3.5 py-1.5 bg-[#10D989] border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-                    <span className="font-black text-sm leading-tight text-black tracking-tight">
+                  {/* Logo Badge: Glowing green pill */}
+                  <div className="flex flex-col px-4 py-1.5 bg-[#10D989] border-[3px] border-black rounded-full shadow-[4px_4px_0px_#000000] drop-shadow-[0_0_10px_rgba(16,217,137,0.45)]">
+                    <span className="font-black text-base leading-tight text-black tracking-tight">
                       ⚡ InvestLAH
                     </span>
-                    <span className="text-[9px] font-black tracking-wider text-black uppercase">
+                    <span className="text-[9px] font-extrabold tracking-wider text-black/80 uppercase">
                       GEN Z MONEY PLAYBOOK
                     </span>
                   </div>
 
-                  {/* Close Button */}
+                  {/* Close Button: Prominent red pill with bounce on hover */}
                   <motion.button
                     type="button"
                     onClick={onClose}
-                    whileHover={{ scale: 1.04, y: -1 }}
-                    whileTap={{ x: 3, y: 3 }}
-                    className="px-3.5 py-2 bg-[#FF4766] text-white font-black text-xs border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] cursor-pointer whitespace-nowrap"
+                    whileHover={{
+                      scale: 1.06,
+                      y: -2,
+                      rotate: -2,
+                      transition: {
+                        type: 'spring',
+                        stiffness: 450,
+                        damping: 12,
+                      },
+                    }}
+                    whileTap={{ x: 3, y: 3, scale: 0.96 }}
+                    className="px-3.5 py-2 bg-[#FF4766] text-white font-extrabold text-xs sm:text-sm border-[3px] border-black rounded-full shadow-[4px_4px_0px_#000000] cursor-pointer whitespace-nowrap"
                   >
                     ❌ Tutup
                   </motion.button>
                 </div>
 
                 {/* 2. Module Navigation (9 Tabs) */}
-                <div className="flex flex-col gap-2">
-                  <div className="text-[11px] font-black tracking-wider text-black uppercase px-1">
-                    ⚡ PILIH BAB PEMBELAJARAN (9 MODUL)
+                <div className="flex flex-col gap-2.5">
+                  <div className="text-[11px] font-black tracking-wider text-slate-800 uppercase px-1">
+                    🌱 PILIH BAB PEMBELAJARAN (9 MODUL)
                   </div>
 
                   <nav className="flex flex-col gap-2">
                     {MODULES.map((mod) => {
                       const isActive = activeTab === mod.id;
-                      const isBoss = mod.id === 't9';
                       return (
                         <motion.button
                           key={mod.id}
@@ -263,30 +269,28 @@ export const Sidebar: React.FC<SidebarProps> = ({
                           }}
                           whileHover={{ x: 2, y: 2 }}
                           whileTap={{ x: 4, y: 4 }}
-                          className={`w-full flex items-center justify-between gap-2 px-3.5 py-2.5 border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-colors text-left cursor-pointer ${
+                          className={`w-full flex items-center justify-between gap-2.5 px-3.5 py-2.5 border-[3px] border-black rounded-full shadow-[4px_4px_0px_#000000] transition-colors text-left cursor-pointer ${
                             isActive
-                              ? 'bg-[#10D989] text-black'
-                              : isBoss
-                              ? 'bg-[#FDE047] hover:bg-[#FB923C] text-black'
-                              : 'bg-[#F3F4F6] hover:bg-[#FDE047] text-black'
+                              ? 'bg-[#FFE4E6]'
+                              : 'bg-white hover:bg-[#FEF08A]'
                           }`}
                         >
                           <div className="flex items-center gap-2.5 min-w-0">
-                            <span className="text-lg shrink-0">
+                            <span className="text-xl shrink-0">
                               {mod.emoji}
                             </span>
                             <div className="flex flex-col min-w-0">
-                              <span className="font-black text-xs sm:text-sm text-black truncate">
+                              <span className="font-extrabold text-sm text-black truncate">
                                 {mod.title}
                               </span>
-                              <span className="text-[11px] font-bold text-neutral-700 truncate">
+                              <span className="text-[11px] font-semibold text-gray-500 truncate">
                                 ({mod.subtitle})
                               </span>
                             </div>
                           </div>
 
                           {isActive && (
-                            <span className="shrink-0 px-2 py-0.5 bg-white text-black font-black text-[10px] border-[2px] border-black rounded-md">
+                            <span className="shrink-0 px-2 py-0.5 bg-[#FEF08A] text-black font-black text-[10px] border-[2px] border-black rounded-full shadow-[2px_2px_0px_#000000]">
                               AKTIF
                             </span>
                           )}
@@ -303,23 +307,23 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   <span className="text-[11px] font-black tracking-wider text-black uppercase">
                     📈 STATS AKAUN KAU
                   </span>
-                  <span className="px-2.5 py-0.5 bg-[#FDE047] border-[2px] border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] font-black text-xs text-black">
-                    {badgeCount}/8 Lencana 🏅
+                  <span className="px-2.5 py-0.5 bg-[#FEF08A] border-[2px] border-black rounded-full shadow-[2px_2px_0px_#000000] font-extrabold text-xs text-black">
+                    {badgeCount} Badge 🏅
                   </span>
                 </div>
 
-                <div className="bg-[#F3F4F6] border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-3 flex flex-col divide-y-2 divide-dashed divide-black/30">
+                <div className="bg-white border-[3px] border-black rounded-2xl shadow-[4px_4px_0px_#000000] p-3.5 flex flex-col divide-y-2 divide-dashed divide-black/30">
                   <div className="flex items-center justify-between gap-2 pb-2">
-                    <span className="text-xs font-extrabold text-black">
+                    <span className="text-xs font-bold text-slate-700">
                       Risk Vibe:
                     </span>
-                    <span className="px-2.5 py-0.5 bg-[#3B82F6] text-white border-[2px] border-black rounded-lg font-black text-xs">
+                    <span className="px-2.5 py-0.5 bg-purple-200 border-[2px] border-black rounded-full font-extrabold text-xs text-black shadow-[2px_2px_0px_#000000]">
                       {riskVibeLabel}
                     </span>
                   </div>
 
                   <div className="flex items-center justify-between gap-2 py-2">
-                    <span className="text-xs font-extrabold text-black">
+                    <span className="text-xs font-bold text-slate-700">
                       Bajet Bulanan:
                     </span>
                     <span className="text-xs font-black text-black">
@@ -328,14 +332,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   </div>
 
                   <div className="flex items-center justify-between gap-2 pt-2">
-                    <span className="text-xs font-extrabold text-black">
-                      Baki Bersih:
+                    <span className="text-xs font-bold text-slate-700">
+                      Baki Surplus:
                     </span>
                     <span
-                      className={`px-2 py-0.5 border-[2px] border-black rounded-md text-xs font-black ${
+                      className={`text-xs font-black ${
                         monthlySurplus >= 0
-                          ? 'bg-[#10D989] text-black'
-                          : 'bg-[#FF4766] text-white'
+                          ? 'text-[#10D989]'
+                          : 'text-[#FF4766]'
                       }`}
                     >
                       {formattedSurplus}

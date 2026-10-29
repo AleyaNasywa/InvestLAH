@@ -222,7 +222,7 @@ export const Tab6Assets: React.FC<Tab6AssetsProps> = ({
     }
   };
 
-  // Subtab 2: Vibe Check Quiz State (CRUCIAL: Starts with "Ready Nak Test Otak? 🧠" + "Let's Go! 🔥")
+  // Subtab 2: Vibe Check Quiz State (Starts with "Ready Nak Test Otak? 🧠" + "Let's Go! 🔥")
   const [quizStarted, setQuizStarted] = useState<boolean>(false);
   const [qIndex, setQIndex] = useState<number>(0);
   const [score, setScore] = useState<number>(0);
@@ -282,26 +282,26 @@ export const Tab6Assets: React.FC<Tab6AssetsProps> = ({
     <section className="max-w-5xl mx-auto flex flex-col gap-5 pb-10">
       {/* Top Navigation & Headers */}
       <div className="flex flex-col items-center gap-2.5 pt-1 text-center">
-        <span className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-[#FDE047] border-[3px] border-black rounded-xl shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] font-black text-xs text-black uppercase">
+        <span className="inline-flex items-center gap-1.5 px-4 py-1 bg-[#FEF08A] border-[3px] border-black rounded-full shadow-[3px_3px_0px_#0F172A] font-black text-xs sm:text-sm text-black">
           🗺️ Port Duit Pergi
         </span>
 
-        <h1 className="text-xl sm:text-3xl font-black text-black tracking-tight">
+        <h1 className="text-2xl sm:text-4xl font-black text-black tracking-tight">
           Aset Kebal vs{' '}
-          <span className="inline-block bg-[#10D989] px-3 py-0.5 border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] -rotate-1">
+          <span className="inline-block bg-[#C8F7E1] px-3 py-0.5 border-[3px] border-black rounded-2xl shadow-[4px_4px_0px_#0F172A] -rotate-1">
             Rollercoaster
           </span>
         </h1>
 
         {/* Subtab Navigation */}
-        <div className="inline-flex p-1.5 bg-white border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] gap-1.5">
+        <div className="inline-flex p-1.5 bg-white border-[3px] border-black rounded-full shadow-[4px_4px_0px_#0F172A] gap-1.5">
           <button
             type="button"
             onClick={() => setSubtab('bancuh')}
-            className={`px-4 py-2 rounded-lg font-black text-xs sm:text-sm transition-colors cursor-pointer ${
+            className={`px-4 py-2 rounded-full font-black text-xs sm:text-sm transition-colors cursor-pointer ${
               subtab === 'bancuh'
-                ? 'bg-[#3B82F6] text-white border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]'
-                : 'bg-transparent text-black border-[2px] border-transparent hover:bg-[#F3F4F6]'
+                ? 'bg-purple-200 text-black border-[2px] border-black shadow-[2px_2px_0px_#0F172A]'
+                : 'bg-transparent text-black border-[2px] border-transparent hover:bg-slate-100'
             }`}
           >
             Bancuh Portfolio 🧪
@@ -310,10 +310,10 @@ export const Tab6Assets: React.FC<Tab6AssetsProps> = ({
           <button
             type="button"
             onClick={() => setSubtab('vibe')}
-            className={`px-4 py-2 rounded-lg font-black text-xs sm:text-sm transition-colors cursor-pointer ${
+            className={`px-4 py-2 rounded-full font-black text-xs sm:text-sm transition-colors cursor-pointer ${
               subtab === 'vibe'
-                ? 'bg-[#10D989] text-black border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]'
-                : 'bg-transparent text-black border-[2px] border-transparent hover:bg-[#F3F4F6]'
+                ? 'bg-purple-200 text-black border-[2px] border-black shadow-[2px_2px_0px_#0F172A]'
+                : 'bg-transparent text-black border-[2px] border-transparent hover:bg-slate-100'
             }`}
           >
             Asset Vibe Check Quiz 🧠
@@ -321,7 +321,7 @@ export const Tab6Assets: React.FC<Tab6AssetsProps> = ({
         </div>
       </div>
 
-      {/* SUBTAB 1: BANCUH PORTFOLIO (SOLID ELECTRIC BLUE vs SOLID CYBER RED + KLIK & UJI) */}
+      {/* SUBTAB 1: BANCUH PORTFOLIO (SOFT-POP BLUE vs SOFT-POP RED + KLIK & UJI) */}
       {subtab === 'bancuh' && (
         <motion.div
           key="subtab-bancuh"
@@ -331,13 +331,13 @@ export const Tab6Assets: React.FC<Tab6AssetsProps> = ({
         >
           {/* Side-by-Side Comparison Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {/* Left Card: Solid Electric Blue (#3B82F6) */}
-            <div className="bg-[#3B82F6] text-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-5 flex flex-col gap-3">
+            {/* Left Card: Soft Sky Blue */}
+            <div className="bg-blue-100 text-black border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-5 flex flex-col gap-3">
               <div>
-                <h3 className="text-lg sm:text-xl font-black text-white">
+                <h3 className="text-lg sm:text-xl font-black text-black">
                   🛡️ Aset Kebal (Risk-Free)
                 </h3>
-                <p className="text-xs sm:text-sm font-bold text-white/90 mt-0.5">
+                <p className="text-xs sm:text-sm font-bold text-slate-700 mt-0.5">
                   Duit steady. Return kecil, tapi confirm-ish.
                 </p>
               </div>
@@ -346,7 +346,7 @@ export const Tab6Assets: React.FC<Tab6AssetsProps> = ({
                 {KEBAL_BULLETS.map((item, i) => (
                   <div
                     key={i}
-                    className="bg-white text-black border-[2px] border-black rounded-xl px-3.5 py-2 font-black text-xs sm:text-sm shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                    className="bg-white text-black border-[2px] border-black rounded-xl px-3.5 py-2 font-black text-xs sm:text-sm shadow-[2px_2px_0px_#0F172A]"
                   >
                     {item}
                   </div>
@@ -354,13 +354,13 @@ export const Tab6Assets: React.FC<Tab6AssetsProps> = ({
               </div>
             </div>
 
-            {/* Right Card: Solid Cyber Red (#FF4766) */}
-            <div className="bg-[#FF4766] text-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-5 flex flex-col gap-3">
+            {/* Right Card: Soft Coral Blush */}
+            <div className="bg-red-100 text-black border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-5 flex flex-col gap-3">
               <div>
-                <h3 className="text-lg sm:text-xl font-black text-white">
+                <h3 className="text-lg sm:text-xl font-black text-black">
                   🎢 Aset Rollercoaster (Risky)
                 </h3>
-                <p className="text-xs sm:text-sm font-bold text-white/90 mt-0.5">
+                <p className="text-xs sm:text-sm font-bold text-slate-700 mt-0.5">
                   Harga naik turun. Boleh stonks, boleh lebur.
                 </p>
               </div>
@@ -369,7 +369,7 @@ export const Tab6Assets: React.FC<Tab6AssetsProps> = ({
                 {ROLLER_BULLETS.map((item, i) => (
                   <div
                     key={i}
-                    className="bg-white text-black border-[2px] border-black rounded-xl px-3.5 py-2 font-black text-xs sm:text-sm shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                    className="bg-white text-black border-[2px] border-black rounded-xl px-3.5 py-2 font-black text-xs sm:text-sm shadow-[2px_2px_0px_#0F172A]"
                   >
                     {item}
                   </div>
@@ -378,21 +378,21 @@ export const Tab6Assets: React.FC<Tab6AssetsProps> = ({
             </div>
           </div>
 
-          {/* Interactive Klik & Uji Classifier with Bold Colors */}
-          <div className="bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-5 flex flex-col gap-4">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b-[2px] border-black pb-3">
+          {/* Interactive Klik & Uji Classifier with Soft-Pop Colors */}
+          <div className="bg-white border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-5 flex flex-col gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b-[2px] border-black/15 pb-3">
               <div>
                 <h3 className="text-base sm:text-lg font-black text-black flex items-center gap-2">
                   <span>🔍</span>
                   <span>Klik &amp; Uji: Aset Ni Kebal Ke Rollercoaster?</span>
                 </h3>
-                <p className="text-xs font-bold text-neutral-600 mt-0.5">
+                <p className="text-xs font-bold text-slate-600 mt-0.5">
                   Klik mana-mana aset kat bawah untuk baca rahsia dia &amp; teka
                   kategori dia!
                 </p>
               </div>
 
-              <span className="self-start sm:self-center px-3 py-1 bg-[#10D989] border-[2px] border-black rounded-lg font-black text-xs text-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] whitespace-nowrap">
+              <span className="self-start sm:self-center px-3 py-1 bg-[#C8F7E1] border-[2px] border-black rounded-full font-black text-xs text-black shadow-[2px_2px_0px_#0F172A] whitespace-nowrap">
                 Klasifikasi: {classifiedCount}/{CLASSIFY_ASSETS.length} Aset ✅
               </span>
             </div>
@@ -403,11 +403,11 @@ export const Tab6Assets: React.FC<Tab6AssetsProps> = ({
                 const isSelected = selectedAssetId === asset.id;
                 const classifiedCat = classifiedMap[asset.id];
 
-                let cardBg = 'bg-[#F3F4F6] hover:bg-neutral-200 text-black';
+                let cardBg = 'bg-[#F7F9F6] hover:bg-slate-100 text-black';
                 if (isSelected) {
-                  cardBg = 'bg-[#FDE047] text-black';
+                  cardBg = 'bg-[#FEF08A] text-black';
                 } else if (classifiedCat) {
-                  cardBg = 'bg-[#10D989] text-black';
+                  cardBg = 'bg-[#A7F3D0] text-black';
                 }
 
                 return (
@@ -415,10 +415,10 @@ export const Tab6Assets: React.FC<Tab6AssetsProps> = ({
                     key={asset.id}
                     type="button"
                     onClick={() => setSelectedAssetId(asset.id)}
-                    className={`${cardBg} border-[3px] border-black rounded-xl p-3 min-h-[104px] flex flex-col items-center justify-center text-center gap-1 transition-all cursor-pointer ${
+                    className={`${cardBg} border-[3px] border-black rounded-2xl p-3 min-h-[104px] flex flex-col items-center justify-center text-center gap-1 transition-all cursor-pointer ${
                       isSelected
-                        ? 'shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] -translate-y-0.5'
-                        : 'shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]'
+                        ? 'shadow-[4px_4px_0px_#0F172A] -translate-y-0.5'
+                        : 'shadow-[2px_2px_0px_#0F172A]'
                     }`}
                   >
                     <span className="text-2xl sm:text-3xl">{asset.emoji}</span>
@@ -427,7 +427,7 @@ export const Tab6Assets: React.FC<Tab6AssetsProps> = ({
                     </span>
 
                     {classifiedCat && (
-                      <span className="mt-1 px-2 py-0.5 bg-white text-black border-[2px] border-black rounded-md font-black text-[10px] flex items-center gap-1">
+                      <span className="mt-1 px-2 py-0.5 bg-white text-black border-[2px] border-black rounded-full font-black text-[10px] flex items-center gap-1">
                         {classifiedCat === 'kebal' ? '🛡️ Kebal' : '🎢 Risky'}
                       </span>
                     )}
@@ -444,18 +444,18 @@ export const Tab6Assets: React.FC<Tab6AssetsProps> = ({
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -6 }}
                 transition={{ duration: 0.15 }}
-                className="bg-[#F3F4F6] border-[3px] border-black rounded-xl p-4 flex flex-col gap-3"
+                className="bg-[#FEFCE8] border-[3px] border-black rounded-2xl p-4 flex flex-col gap-3"
               >
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3">
                   <div className="flex items-start sm:items-center gap-3">
-                    <div className="w-12 h-12 shrink-0 bg-white border-[2px] border-black rounded-xl shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center text-2xl">
+                    <div className="w-12 h-12 shrink-0 bg-white border-[2px] border-black rounded-2xl shadow-[2px_2px_0px_#0F172A] flex items-center justify-center text-2xl">
                       {activeAsset.emoji}
                     </div>
                     <div>
                       <h4 className="text-base sm:text-lg font-black text-black leading-tight">
                         {activeAsset.fullName}
                       </h4>
-                      <p className="text-xs font-bold text-neutral-700 mt-0.5">
+                      <p className="text-xs font-bold text-slate-700 mt-0.5">
                         {activeAsset.subtitle}
                       </p>
                     </div>
@@ -467,7 +467,7 @@ export const Tab6Assets: React.FC<Tab6AssetsProps> = ({
                       onClick={(e) =>
                         handleGuessCategory(activeAsset, 'kebal', e)
                       }
-                      className="neo-btn px-3.5 py-2 bg-[#3B82F6] text-white rounded-xl font-black text-xs cursor-pointer"
+                      className="neo-btn px-3.5 py-2 bg-[#BFDBFE] hover:bg-blue-300 text-black rounded-xl font-black text-xs cursor-pointer"
                     >
                       🛡️ Ini Aset Kebal!
                     </button>
@@ -477,7 +477,7 @@ export const Tab6Assets: React.FC<Tab6AssetsProps> = ({
                       onClick={(e) =>
                         handleGuessCategory(activeAsset, 'risky', e)
                       }
-                      className="neo-btn px-3.5 py-2 bg-[#FF4766] text-white rounded-xl font-black text-xs cursor-pointer"
+                      className="neo-btn px-3.5 py-2 bg-[#FBCFE8] hover:bg-pink-300 text-black rounded-xl font-black text-xs cursor-pointer"
                     >
                       🎢 Ini Rollercoaster!
                     </button>
@@ -488,7 +488,7 @@ export const Tab6Assets: React.FC<Tab6AssetsProps> = ({
                   <div className="font-black text-xs sm:text-sm text-black">
                     {activeAsset.secretWhy}
                   </div>
-                  <div className="text-xs font-bold text-neutral-600">
+                  <div className="text-xs font-bold text-slate-600">
                     {activeAsset.secretNote}
                   </div>
                 </div>
@@ -497,8 +497,8 @@ export const Tab6Assets: React.FC<Tab6AssetsProps> = ({
                   <div
                     className={`border-[2px] border-black rounded-xl px-3.5 py-2 font-black text-xs sm:text-sm ${
                       activeFeedback.ok
-                        ? 'bg-[#10D989] text-black'
-                        : 'bg-[#FF4766] text-white'
+                        ? 'bg-[#D1FAE5] text-black'
+                        : 'bg-[#FFE4E6] text-black'
                     }`}
                   >
                     {activeFeedback.message}
@@ -512,7 +512,7 @@ export const Tab6Assets: React.FC<Tab6AssetsProps> = ({
             <button
               type="button"
               onClick={() => setSubtab('vibe')}
-              className="neo-btn px-7 py-3 bg-[#10D989] rounded-xl font-black text-sm sm:text-base text-black cursor-pointer"
+              className="neo-btn px-7 py-3 bg-[#10D989] rounded-2xl font-black text-sm sm:text-base text-black cursor-pointer"
             >
               Next: Asset Vibe Check Quiz 🧠
             </button>
@@ -529,31 +529,31 @@ export const Tab6Assets: React.FC<Tab6AssetsProps> = ({
           className="max-w-2xl mx-auto w-full flex flex-col gap-4"
         >
           {!quizStarted ? (
-            <div className="bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-7 sm:p-8 text-center flex flex-col items-center gap-3.5">
-              <div className="w-16 h-16 bg-[#FDE047] border-[3px] border-black rounded-2xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center text-4xl animate-bob">
+            <div className="bg-gradient-to-br from-[#FEF08A] via-[#C8F7E1] to-[#BEE3FF] border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-7 sm:p-8 text-center flex flex-col items-center gap-3.5">
+              <div className="w-16 h-16 bg-white border-[3px] border-black rounded-2xl shadow-[4px_4px_0px_#0F172A] flex items-center justify-center text-4xl animate-bob">
                 🧠
               </div>
-              <span className="px-3 py-0.5 bg-[#3B82F6] text-white border-[2px] border-black rounded-md font-black text-xs uppercase tracking-wider">
+              <span className="px-3 py-0.5 bg-purple-200 text-black border-[2px] border-black rounded-full font-black text-xs uppercase tracking-wider">
                 ASSET VIBE CHECK • 3 SOALAN
               </span>
               <h3 className="text-xl sm:text-2xl font-black text-black">
                 Ready Nak Test Otak? 🧠
               </h3>
-              <p className="text-xs sm:text-sm font-bold text-neutral-700 max-w-md">
+              <p className="text-xs sm:text-sm font-bold text-slate-800 max-w-md">
                 Teka sama ada statement pasal ASB, Kripto &amp; Diversification
                 ni <b>Fact 📠</b> atau <b>Cap 🧢</b>!
               </p>
               <button
                 type="button"
                 onClick={() => setQuizStarted(true)}
-                className="neo-btn mt-1 px-8 py-3.5 bg-[#10D989] rounded-xl font-black text-base sm:text-lg text-black cursor-pointer"
+                className="neo-btn mt-1 px-8 py-3.5 bg-[#10D989] rounded-2xl font-black text-base sm:text-lg text-black cursor-pointer"
               >
                 Let&apos;s Go! 🔥
               </button>
             </div>
           ) : !quizCompleted ? (
             <>
-              <div className="w-full h-5 bg-white border-[3px] border-black rounded-full shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+              <div className="w-full h-5 bg-white border-[3px] border-black rounded-full shadow-[3px_3px_0px_#0F172A] overflow-hidden">
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: `${progressPercent}%` }}
@@ -569,15 +569,15 @@ export const Tab6Assets: React.FC<Tab6AssetsProps> = ({
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -25 }}
                   transition={{ duration: 0.2 }}
-                  className={`min-h-[210px] border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 flex flex-col items-center justify-center text-center gap-3 transition-colors ${
+                  className={`min-h-[210px] border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-6 flex flex-col items-center justify-center text-center gap-3 transition-colors ${
                     quizFeedback?.type === 'correct'
-                      ? 'bg-[#10D989] text-black'
+                      ? 'bg-[#D1FAE5] text-black'
                       : quizFeedback?.type === 'wrong'
-                      ? 'bg-[#FF4766] text-white'
+                      ? 'bg-[#FFE4E6] text-black'
                       : 'bg-white text-black'
                   }`}
                 >
-                  <span className="px-3 py-0.5 bg-[#FDE047] text-black border-[2px] border-black rounded-md font-black text-xs">
+                  <span className="px-3 py-0.5 bg-purple-200 text-black border-[2px] border-black rounded-full font-black text-xs">
                     Soalan {qIndex + 1}/{VIBE_QUESTIONS.length}
                   </span>
 
@@ -606,7 +606,7 @@ export const Tab6Assets: React.FC<Tab6AssetsProps> = ({
                   type="button"
                   disabled={Boolean(quizFeedback)}
                   onClick={(e) => handleQuizAnswer('cap', e)}
-                  className="neo-btn py-3.5 px-5 bg-white hover:bg-[#FF4766] hover:text-white text-black rounded-xl font-black text-base sm:text-lg cursor-pointer disabled:opacity-50"
+                  className="neo-btn py-3.5 px-5 bg-white hover:bg-red-100 text-black rounded-2xl font-black text-base sm:text-lg cursor-pointer disabled:opacity-50"
                 >
                   Cap 🧢 (Mitos)
                 </button>
@@ -615,17 +615,17 @@ export const Tab6Assets: React.FC<Tab6AssetsProps> = ({
                   type="button"
                   disabled={Boolean(quizFeedback)}
                   onClick={(e) => handleQuizAnswer('fact', e)}
-                  className="neo-btn py-3.5 px-5 bg-white hover:bg-[#10D989] text-black rounded-xl font-black text-base sm:text-lg cursor-pointer disabled:opacity-50"
+                  className="neo-btn py-3.5 px-5 bg-white hover:bg-[#D1FAE5] text-black rounded-2xl font-black text-base sm:text-lg cursor-pointer disabled:opacity-50"
                 >
                   Fact 📠 (Legit)
                 </button>
               </div>
             </>
           ) : (
-            <div className="bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-7 text-center flex flex-col items-center gap-3.5">
-              <div className="w-32 h-32 rounded-full bg-[#FDE047] border-[3px] border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex flex-col items-center justify-center relative mb-2">
+            <div className="bg-white border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-7 text-center flex flex-col items-center gap-3.5">
+              <div className="w-32 h-32 rounded-full bg-blue-200 border-[3px] border-black shadow-[4px_4px_0px_#0F172A] flex flex-col items-center justify-center relative mb-2">
                 <span className="text-5xl animate-bob">🛡️</span>
-                <span className="absolute -bottom-3 px-3 py-0.5 bg-[#3B82F6] text-white border-[2px] border-black rounded-full font-black text-xs whitespace-nowrap">
+                <span className="absolute -bottom-3 px-3 py-0.5 bg-pink-200 text-black border-[2px] border-black rounded-full font-black text-xs whitespace-nowrap">
                   Asset Master 🛡️
                 </span>
               </div>
@@ -634,11 +634,11 @@ export const Tab6Assets: React.FC<Tab6AssetsProps> = ({
                 GGWP! Lencana Ter-loot 🎉
               </h3>
 
-              <p className="text-xs sm:text-sm font-bold text-neutral-700 max-w-md">
+              <p className="text-xs sm:text-sm font-bold text-slate-700 max-w-md">
                 Kau dah boleh beza kebal vs rollercoaster. Mantap!
               </p>
 
-              <div className="px-4 py-1 bg-[#10D989] border-[2px] border-black rounded-lg font-black text-sm text-black">
+              <div className="px-4 py-1 bg-[#D1FAE5] border-[2px] border-black rounded-full font-black text-sm text-black">
                 {score}/{VIBE_QUESTIONS.length} betul 👍
               </div>
 
@@ -646,7 +646,7 @@ export const Tab6Assets: React.FC<Tab6AssetsProps> = ({
                 <button
                   type="button"
                   onClick={handleRestartQuiz}
-                  className="neo-btn px-5 py-2.5 bg-white hover:bg-[#FDE047] rounded-xl font-black text-xs sm:text-sm text-black cursor-pointer"
+                  className="neo-btn px-5 py-2.5 bg-white hover:bg-[#FEF08A] rounded-2xl font-black text-xs sm:text-sm text-black cursor-pointer"
                 >
                   Main Lagi 🔄
                 </button>
@@ -654,7 +654,7 @@ export const Tab6Assets: React.FC<Tab6AssetsProps> = ({
                 <button
                   type="button"
                   onClick={() => onNavigate('t7')}
-                  className="neo-btn px-6 py-2.5 bg-[#10D989] rounded-xl font-black text-xs sm:text-sm text-black cursor-pointer"
+                  className="neo-btn px-6 py-2.5 bg-[#10D989] rounded-2xl font-black text-xs sm:text-sm text-black cursor-pointer"
                 >
                   Next: Kamus Pelabur (Tab 7) 📖
                 </button>

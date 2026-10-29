@@ -24,7 +24,7 @@ const RACE_LANES: RaceLane[] = [
     name: 'Bawah Bantal',
     subtitle: '0% • literally tidur',
     rate: 0,
-    barBgClass: 'bg-neutral-400',
+    barBgClass: 'bg-gray-300',
   },
   {
     id: 'bank',
@@ -32,7 +32,7 @@ const RACE_LANES: RaceLane[] = [
     name: 'Akaun Simpanan Bank',
     subtitle: '~1% setahun',
     rate: 0.01,
-    barBgClass: 'bg-[#3B82F6]',
+    barBgClass: 'bg-sky-200',
   },
   {
     id: 'fdi',
@@ -40,7 +40,7 @@ const RACE_LANES: RaceLane[] = [
     name: 'FD-i',
     subtitle: '~3% setahun',
     rate: 0.03,
-    barBgClass: 'bg-[#FB923C]',
+    barBgClass: 'bg-purple-300',
   },
   {
     id: 'asb',
@@ -56,7 +56,7 @@ const RACE_LANES: RaceLane[] = [
     name: 'ETF Saham',
     subtitle: '~8% setahun, naik turun',
     rate: 0.08,
-    barBgClass: 'bg-[#FDE047]',
+    barBgClass: 'bg-[#FEF08A]',
   },
 ];
 
@@ -117,29 +117,29 @@ export const Tab5Simulator: React.FC<Tab5SimulatorProps> = ({
     <section className="max-w-4xl mx-auto flex flex-col gap-5 pb-10">
       {/* 1. Header Section */}
       <div className="text-center flex flex-col items-center gap-2 pt-1">
-        <span className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-[#FDE047] border-[3px] border-black rounded-xl shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] font-black text-xs uppercase">
-          🕹️ Simulator Arcade
+        <span className="inline-flex items-center gap-1.5 px-4 py-1 bg-[#FEF08A] border-[3px] border-black rounded-full shadow-[3px_3px_0px_#0F172A] font-black text-xs sm:text-sm">
+          🕹️ Simulator
         </span>
 
-        <h1 className="text-xl sm:text-3xl font-black tracking-tight text-black leading-tight">
+        <h1 className="text-2xl sm:text-4xl font-black tracking-tight text-black leading-tight">
           Kalau Kau Start{' '}
-          <span className="inline-block bg-[#10D989] px-3 py-0.5 border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] -rotate-1">
+          <span className="inline-block bg-[#10D989] px-3 py-0.5 border-[3px] border-black rounded-2xl shadow-[4px_4px_0px_#0F172A] -rotate-1">
             Sekarang...
           </span>
         </h1>
 
-        <p className="text-xs sm:text-sm font-bold text-neutral-700">
+        <p className="text-xs sm:text-sm font-bold text-slate-600">
           Main slider. Tengok bag siapa menang race.
         </p>
       </div>
 
-      {/* 2. The Input Controls (3 Chunky Sliders side-by-side) */}
+      {/* 2. The Input Controls (3 Soft-Pop Cards side-by-side) */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-4 flex flex-col justify-between gap-2">
-          <div className="px-2.5 py-0.5 bg-[#10D989] border-[2px] border-black rounded-md self-start text-[11px] font-black uppercase tracking-wider text-black">
+        <div className="bg-[#C8F7E1] border-[3px] border-black rounded-2xl shadow-[5px_5px_0px_#0F172A] p-4 flex flex-col justify-between gap-2">
+          <div className="text-xs font-black uppercase tracking-wider text-black">
             SIMPAN SEBULAN 💵
           </div>
-          <div className="font-mono-rubik text-xl sm:text-2xl text-black">
+          <div className="font-jakarta font-extrabold text-2xl sm:text-3xl tracking-tight tabular-nums text-black">
             {fmtRM(monthly)}
           </div>
           <input
@@ -169,11 +169,11 @@ export const Tab5Simulator: React.FC<Tab5SimulatorProps> = ({
           />
         </div>
 
-        <div className="bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-4 flex flex-col justify-between gap-2">
-          <div className="px-2.5 py-0.5 bg-[#3B82F6] text-white border-[2px] border-black rounded-md self-start text-[11px] font-black uppercase tracking-wider">
+        <div className="bg-blue-200 border-[3px] border-black rounded-2xl shadow-[5px_5px_0px_#0F172A] p-4 flex flex-col justify-between gap-2">
+          <div className="text-xs font-black uppercase tracking-wider text-black">
             BERAPA LAMA ⏳
           </div>
-          <div className="font-mono-rubik text-xl sm:text-2xl text-black">
+          <div className="font-jakarta font-extrabold text-2xl sm:text-3xl tracking-tight tabular-nums text-black">
             {years} tahun
           </div>
           <input
@@ -189,7 +189,7 @@ export const Tab5Simulator: React.FC<Tab5SimulatorProps> = ({
             style={
               {
                 '--p': `${yearsPct}%`,
-                '--fill': '#3B82F6',
+                '--fill': '#10D989',
               } as React.CSSProperties
             }
             className="chunky"
@@ -197,11 +197,11 @@ export const Tab5Simulator: React.FC<Tab5SimulatorProps> = ({
           />
         </div>
 
-        <div className="bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-4 flex flex-col justify-between gap-2">
-          <div className="px-2.5 py-0.5 bg-[#FB923C] text-black border-[2px] border-black rounded-md self-start text-[11px] font-black uppercase tracking-wider">
+        <div className="bg-pink-200 border-[3px] border-black rounded-2xl shadow-[5px_5px_0px_#0F172A] p-4 flex flex-col justify-between gap-2">
+          <div className="text-xs font-black uppercase tracking-wider text-black">
             MODAL AWAL 💰
           </div>
-          <div className="font-mono-rubik text-xl sm:text-2xl text-black">
+          <div className="font-jakarta font-extrabold text-2xl sm:text-3xl tracking-tight tabular-nums text-black">
             {fmtRM(initial)}
           </div>
           <input
@@ -217,7 +217,7 @@ export const Tab5Simulator: React.FC<Tab5SimulatorProps> = ({
             style={
               {
                 '--p': `${initialPct}%`,
-                '--fill': '#FB923C',
+                '--fill': '#10D989',
               } as React.CSSProperties
             }
             className="chunky"
@@ -228,14 +228,14 @@ export const Tab5Simulator: React.FC<Tab5SimulatorProps> = ({
 
       {/* 3. Inflation Toggle */}
       <div className="flex justify-center">
-        <div className="inline-flex items-center p-1.5 bg-white border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] gap-1.5">
+        <div className="inline-flex items-center p-1.5 bg-white border-[3px] border-black rounded-full shadow-[4px_4px_0px_#0F172A] gap-1.5">
           <button
             type="button"
             onClick={() => setDeductInflation(false)}
-            className={`px-4 py-1.5 rounded-lg font-black text-xs sm:text-sm transition-all cursor-pointer ${
+            className={`px-4 py-1.5 rounded-full font-black text-xs sm:text-sm transition-all cursor-pointer ${
               !deductInflation
-                ? 'bg-[#10D989] text-black border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]'
-                : 'bg-transparent text-black border-[2px] border-transparent hover:bg-[#F3F4F6]'
+                ? 'bg-purple-200 text-black border-[2px] border-black shadow-[2px_2px_0px_#0F172A]'
+                : 'bg-transparent text-black border-[2px] border-transparent hover:bg-slate-100'
             }`}
           >
             💵 Nilai Nominal
@@ -244,10 +244,10 @@ export const Tab5Simulator: React.FC<Tab5SimulatorProps> = ({
           <button
             type="button"
             onClick={() => setDeductInflation(true)}
-            className={`px-4 py-1.5 rounded-lg font-black text-xs sm:text-sm transition-all cursor-pointer ${
+            className={`px-4 py-1.5 rounded-full font-black text-xs sm:text-sm transition-all cursor-pointer ${
               deductInflation
-                ? 'bg-[#FF4766] text-white border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]'
-                : 'bg-transparent text-black border-[2px] border-transparent hover:bg-[#F3F4F6]'
+                ? 'bg-purple-200 text-black border-[2px] border-black shadow-[2px_2px_0px_#0F172A]'
+                : 'bg-transparent text-black border-[2px] border-transparent hover:bg-slate-100'
             }`}
           >
             🎈 Tolak Inflasi 3%
@@ -256,36 +256,37 @@ export const Tab5Simulator: React.FC<Tab5SimulatorProps> = ({
       </div>
 
       {/* 4. The Hero Result Card */}
-      <div className="bg-[#FDE047] border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-5 text-center flex flex-col items-center gap-1.5">
+      <div className="bg-gradient-to-br from-[#FFF0A3] to-[#C8F7E1] border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-5 text-center flex flex-col items-center gap-1.5">
         <div className="text-xs font-black uppercase tracking-wider text-black">
           KALAU MASUK ETF SAHAM 📈, BAG KAU JADI
         </div>
 
-        <div className="font-mono-rubik text-3xl sm:text-5xl text-black leading-none my-1 drop-shadow-[3px_3px_0px_#FFFFFF]">
+        <div className="font-jakarta font-extrabold text-3xl sm:text-5xl tracking-tight tabular-nums text-black leading-none my-1 drop-shadow-[3px_3px_0px_#FFFFFF]">
           {fmtRM(etfValue)}
         </div>
 
         <div className="text-xs sm:text-sm font-black text-black">
           vs bawah bantal <u>{fmtRM(bantalValue)}</u>. Beza{' '}
-          <span className="px-2 py-0.5 bg-[#10D989] border-[2px] border-black rounded-md">
+          <span className="px-2 py-0.5 bg-white border-[2px] border-black rounded-lg">
             {fmtRM(diffVsBantal)}
           </span>{' '}
           🤯{deductInflation ? ' (nilai hari ni)' : ''}
         </div>
       </div>
 
-      {/* 5. The "Race Bag" Visualization — Standard Height Bars + HUGE Bold RM Numbers */}
-      <div className="bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-4 sm:p-5 flex flex-col gap-3.5">
-        <div className="text-xs sm:text-sm font-black tracking-wider text-black uppercase border-b-[2px] border-black pb-2">
+      {/* 5. The "Race Bag" Visualization — Clean Readable Font & Never Clipped */}
+      <div className="bg-white border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-4 sm:p-5 flex flex-col gap-3.5">
+        <div className="text-xs sm:text-sm font-black tracking-wider text-black uppercase border-b-[2px] border-black/15 pb-2">
           🏁 RACE BAG SIAPA PALING BESAR
         </div>
 
         <div className="flex flex-col gap-3">
           {RACE_LANES.map((lane, idx) => {
             const amount = laneValues[idx];
+            // Cap bar fill width to 58% so the RM number on the right always has plenty of space and never gets cut off
             const widthPercent = Math.max(
               6,
-              Math.min(72, (amount / maxVal) * 72)
+              Math.min(58, (amount / maxVal) * 58)
             );
             const isWinner = idx === RACE_LANES.length - 1;
 
@@ -299,24 +300,21 @@ export const Tab5Simulator: React.FC<Tab5SimulatorProps> = ({
                   <div className="font-black text-xs sm:text-sm text-black">
                     {lane.emoji} {lane.name}
                   </div>
-                  <small className="block text-[11px] font-bold text-neutral-600">
+                  <small className="block text-[11px] font-bold text-slate-600">
                     {lane.subtitle}
                   </small>
                 </div>
 
-                {/* Standard Height Bar Track (h-10) with Extra-Large Bold RM Number */}
-                <div className="sm:col-span-8 h-10 bg-[#F3F4F6] border-[3px] border-black rounded-xl shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden flex items-center">
-                  <motion.span
+                {/* Compact Bar Track (h-10) with Clean, Readable RM Number */}
+                <div className="sm:col-span-8 h-10 bg-[#F7F9F6] border-[3px] border-black rounded-xl overflow-hidden flex items-center">
+                  <motion.div
                     initial={{ width: '6%' }}
                     animate={{ width: `${widthPercent}%` }}
                     transition={{ type: 'spring', stiffness: 220, damping: 26 }}
-                    className={`h-full border-r-[3px] border-black ${lane.barBgClass}`}
+                    className={`h-full shrink-0 border-r-[3px] border-black ${lane.barBgClass}`}
                   />
 
-                  <span
-                    style={{ left: `${widthPercent}%` }}
-                    className="absolute top-1/2 -translate-y-1/2 pl-2.5 font-mono-rubik text-lg sm:text-2xl font-black text-black whitespace-nowrap pointer-events-none transition-all duration-300"
-                  >
+                  <span className="pl-2.5 pr-2 font-jakarta font-bold text-sm sm:text-base text-slate-900 tabular-nums whitespace-nowrap shrink-0">
                     {fmtRM(amount)}
                     {isWinner ? ' 👑' : ''}
                   </span>
@@ -328,7 +326,7 @@ export const Tab5Simulator: React.FC<Tab5SimulatorProps> = ({
       </div>
 
       {/* 6. Cost of Delay & Footer */}
-      <div className="bg-[#FB923C] border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-4 sm:p-5 text-center flex flex-col items-center gap-1.5">
+      <div className="bg-purple-200 border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-4 sm:p-5 text-center flex flex-col items-center gap-1.5">
         <h3 className="text-base sm:text-lg font-black text-black">
           ⏱️ Start lambat 5 tahun?
         </h3>
@@ -347,7 +345,7 @@ export const Tab5Simulator: React.FC<Tab5SimulatorProps> = ({
         )}
       </div>
 
-      <p className="text-xs font-bold text-neutral-600 text-center">
+      <p className="text-xs font-bold text-slate-500 text-center">
         Anggaran je. Return lepas != janji masa depan. Kadar: Bank 1%, FD-i 3%,
         ASB 5%, ETF saham 8% setahun.
       </p>
@@ -359,7 +357,7 @@ export const Tab5Simulator: React.FC<Tab5SimulatorProps> = ({
             onAwardBadge?.('Time Traveler');
             onNavigate('t6');
           }}
-          className="neo-btn px-7 py-3.5 bg-[#10D989] rounded-xl font-black text-sm sm:text-base text-black cursor-pointer"
+          className="neo-btn px-7 py-3.5 bg-[#10D989] rounded-2xl font-black text-sm sm:text-base text-black cursor-pointer"
         >
           Next: Port Duit Pergi (Tab 6) 🗺️
         </button>

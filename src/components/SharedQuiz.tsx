@@ -116,18 +116,18 @@ export const SharedQuiz: React.FC<SharedQuizProps> = ({
 
   if (phase === 'start') {
     return (
-      <div className="max-w-2xl mx-auto bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 sm:p-8 text-center flex flex-col items-center gap-3.5">
+      <div className="max-w-2xl mx-auto bg-gradient-to-br from-[#FEF08A] via-[#C8F7E1] to-[#BEE3FF] border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-7 sm:p-8 text-center flex flex-col items-center gap-3.5">
         <span className="text-5xl sm:text-6xl animate-bob">{startEmoji}</span>
         <h3 className="text-xl sm:text-2xl font-black text-black">
           {startTitle}
         </h3>
-        <p className="text-xs sm:text-sm font-bold text-neutral-700 max-w-md">
+        <p className="text-xs sm:text-sm font-bold text-slate-800 max-w-md">
           {startSub}
         </p>
         <button
           type="button"
           onClick={handleStart}
-          className="neo-btn mt-1 px-7 py-3 bg-[#10D989] rounded-xl font-black text-sm sm:text-base text-black cursor-pointer"
+          className="neo-btn mt-1 px-7 py-3.5 bg-[#10D989] rounded-2xl font-black text-sm sm:text-base text-black cursor-pointer"
         >
           {startBtn}
         </button>
@@ -140,18 +140,18 @@ export const SharedQuiz: React.FC<SharedQuizProps> = ({
       <motion.div
         initial={{ scale: 0.94, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        className="max-w-2xl mx-auto bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 sm:p-8 text-center flex flex-col items-center gap-3.5"
+        className="max-w-2xl mx-auto bg-white border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-7 sm:p-8 text-center flex flex-col items-center gap-3.5"
       >
         <div
           style={badge.bg ? { backgroundColor: badge.bg } : undefined}
           className={`w-32 h-32 rounded-full ${
-            badge.bgClass || 'bg-[#FDE047]'
-          } border-[3px] border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex flex-col items-center justify-center relative mb-2`}
+            badge.bgClass || 'bg-[#FEF08A]'
+          } border-[3px] border-black shadow-[4px_4px_0px_#0F172A] flex flex-col items-center justify-center relative mb-2`}
         >
           <span className="text-5xl animate-bob">{badge.emoji}</span>
           <span
             className={`absolute -bottom-3 px-3.5 py-0.5 ${
-              badge.ribbonClass || 'bg-[#FF4766] text-white'
+              badge.ribbonClass || 'bg-pink-200 text-black'
             } border-[2px] border-black rounded-full font-black text-xs whitespace-nowrap`}
           >
             {badge.ribbon}
@@ -161,11 +161,11 @@ export const SharedQuiz: React.FC<SharedQuizProps> = ({
         <h3 className="text-xl sm:text-2xl font-black text-black mt-1">
           {badge.title}
         </h3>
-        <p className="text-xs sm:text-sm font-bold text-neutral-700">
+        <p className="text-xs sm:text-sm font-bold text-slate-700">
           {badge.sub}
         </p>
 
-        <div className="px-4 py-1 bg-[#FDE047] border-[2px] border-black rounded-lg font-black text-sm text-black">
+        <div className="px-4 py-1 bg-[#C8F7E1] border-[2px] border-black rounded-full font-black text-sm text-black">
           {score}/{total} betul{' '}
           {score === total ? '💯' : score >= total / 2 ? '👍' : '😅'}
         </div>
@@ -174,7 +174,7 @@ export const SharedQuiz: React.FC<SharedQuizProps> = ({
           <button
             type="button"
             onClick={handleStart}
-            className="neo-btn px-5 py-2.5 bg-white hover:bg-[#FDE047] rounded-xl font-black text-xs sm:text-sm cursor-pointer"
+            className="neo-btn px-5 py-2.5 bg-white hover:bg-[#FEF08A] rounded-2xl font-black text-xs sm:text-sm cursor-pointer"
           >
             Main Lagi 🔄
           </button>
@@ -182,7 +182,7 @@ export const SharedQuiz: React.FC<SharedQuizProps> = ({
             <button
               type="button"
               onClick={nextButton.onClick}
-              className="neo-btn px-6 py-2.5 bg-[#10D989] rounded-xl font-black text-xs sm:text-sm cursor-pointer"
+              className="neo-btn px-6 py-2.5 bg-[#10D989] rounded-2xl font-black text-xs sm:text-sm cursor-pointer"
             >
               {nextButton.label}
             </button>
@@ -191,7 +191,7 @@ export const SharedQuiz: React.FC<SharedQuizProps> = ({
             <button
               type="button"
               onClick={() => onNavigate(nextTab)}
-              className="neo-btn px-6 py-2.5 bg-[#10D989] rounded-xl font-black text-xs sm:text-sm cursor-pointer"
+              className="neo-btn px-6 py-2.5 bg-[#10D989] rounded-2xl font-black text-xs sm:text-sm cursor-pointer"
             >
               {nextLabel}
             </button>
@@ -205,7 +205,7 @@ export const SharedQuiz: React.FC<SharedQuizProps> = ({
 
   return (
     <div className="max-w-2xl mx-auto flex flex-col gap-4">
-      <div className="w-full h-4 bg-white border-[3px] border-black rounded-full shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+      <div className="w-full h-4 bg-white border-[3px] border-black rounded-full shadow-[3px_3px_0px_#0F172A] overflow-hidden">
         <div
           style={{ width: `${prog}%` }}
           className="h-full bg-[#10D989] border-r-[2px] border-black transition-all duration-300"
@@ -218,15 +218,15 @@ export const SharedQuiz: React.FC<SharedQuizProps> = ({
           initial={{ opacity: 0, x: 25 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -25 }}
-          className={`min-h-[200px] border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 flex flex-col items-center justify-center text-center gap-2.5 ${
+          className={`min-h-[200px] border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-6 flex flex-col items-center justify-center text-center gap-2.5 ${
             feedback
               ? feedback.ok
-                ? 'bg-[#10D989] text-black'
-                : 'bg-[#FF4766] text-white'
+                ? 'bg-[#C8F7E1] text-black'
+                : 'bg-[#FFC9E0] text-black'
               : 'bg-white text-black'
           }`}
         >
-          <span className="px-3 py-0.5 bg-[#FDE047] text-black border-[2px] border-black rounded-md font-black text-xs">
+          <span className="px-3 py-0.5 bg-purple-200 text-black border-[2px] border-black rounded-full font-black text-xs">
             {qLabel} {index + 1}/{total}
           </span>
           <span className="text-4xl sm:text-5xl">{current.e}</span>
@@ -254,7 +254,7 @@ export const SharedQuiz: React.FC<SharedQuizProps> = ({
             type="button"
             disabled={Boolean(feedback)}
             onClick={(e) => handleAnswer(opt.key, e)}
-            className={`neo-btn py-3.5 px-5 bg-white ${opt.hoverClass} rounded-xl font-black text-base sm:text-lg transition-colors cursor-pointer disabled:opacity-50`}
+            className={`neo-btn py-3.5 px-5 bg-white ${opt.hoverClass} rounded-2xl font-black text-base sm:text-lg transition-colors cursor-pointer disabled:opacity-50`}
           >
             {opt.label}
           </button>

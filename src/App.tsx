@@ -134,18 +134,18 @@ export default function App() {
   // Container width class based on user's selected viewport mode (Desktop / Tablet / Mobile)
   const stageContainerClass =
     viewportMode === 'mobile'
-      ? 'max-w-[410px] mx-auto my-5 bg-[#F3F4F6] border-[4px] border-black rounded-[28px] shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] px-3.5 pt-5 pb-12 transition-all duration-300'
+      ? 'max-w-[410px] mx-auto my-6 bg-[#F7F9F6] border-[4px] border-black rounded-[32px] shadow-[10px_10px_0px_#0F172A] px-3.5 pt-5 pb-12 transition-all duration-300'
       : viewportMode === 'tablet'
-      ? 'max-w-[768px] mx-auto my-5 bg-[#F3F4F6] border-[4px] border-black rounded-[24px] shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] px-6 pt-6 pb-14 transition-all duration-300'
+      ? 'max-w-[768px] mx-auto my-6 bg-[#F7F9F6] border-[4px] border-black rounded-[28px] shadow-[10px_10px_0px_#0F172A] px-6 pt-6 pb-14 transition-all duration-300'
       : 'px-4 sm:px-6 md:px-10 pt-5 pb-16 transition-all duration-300';
 
   return (
     <div
-      className={`min-h-screen text-black relative ${
-        viewportMode === 'desktop' ? 'bg-[#F3F4F6]' : 'bg-neutral-300'
+      className={`min-h-screen text-[#0F172A] relative ${
+        viewportMode === 'desktop' ? 'bg-[#F7F9F6]' : 'bg-[#E2E8F0]'
       }`}
     >
-      {/* Full-Screen Confetti Canvas Overlay (Fires exclusively on Tab 9 Final Boss Quiz) */}
+      {/* Full-Screen Confetti Canvas Overlay */}
       <canvas
         id="confetti-canvas"
         className="fixed inset-0 pointer-events-none z-[9999] w-screen h-screen"

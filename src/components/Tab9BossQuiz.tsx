@@ -260,7 +260,6 @@ export const Tab9BossQuiz: React.FC<Tab9BossQuizProps> = ({
   onUnlockAllBadges,
   onNavigate,
 }) => {
-  // Dev / Demo unlock state so user can test immediately or unlock all 8 badges
   const [devUnlocked, setDevUnlocked] = useState<boolean>(true);
   const [stage, setStage] = useState<'gate' | 'quiz' | 'result'>('gate');
   const [qIdx, setQIdx] = useState<number>(0);
@@ -270,7 +269,6 @@ export const Tab9BossQuiz: React.FC<Tab9BossQuizProps> = ({
   const [showReview, setShowReview] = useState<boolean>(false);
   const [shareToast, setShareToast] = useState<string | null>(null);
 
-  // Check how many of the 8 core badges are earned (either via earnedBadges or visitedTabs)
   const unlockedBadgeKeys = EIGHT_MODULE_BADGES.filter(
     (slot) =>
       earnedBadges.includes(slot.badgeKey) || visitedTabs.includes(slot.id)
@@ -308,7 +306,6 @@ export const Tab9BossQuiz: React.FC<Tab9BossQuizProps> = ({
     } else {
       setStage('result');
       onAwardBadge('InvestLAH Certified');
-      // EXCLUSIVE TO TAB 9: Massive Full-Screen Confetti Explosion!
       fireMassiveBossConfetti();
     }
   };
@@ -341,32 +338,32 @@ export const Tab9BossQuiz: React.FC<Tab9BossQuizProps> = ({
     totalScore <= 4
       ? {
           title: 'Half-Past-Six Bro 💀',
-          bg: 'bg-[#FF4766] text-white',
+          bg: 'bg-[#FFE4E6] text-black',
           sub: 'Masih senang kena gula-gula dengan scammer ni bro! Jangan risau, ulang balik modul 1–8 bagi padu.',
         }
       : totalScore <= 8
       ? {
           title: 'Financial Guru Wannabe 🤔',
-          bg: 'bg-[#FDE047] text-black',
+          bg: 'bg-[#FEF08A] text-black',
           sub: 'Not bad wei! Asas kau dah kukuh, tinggal tajamkan lagi ilmu Syariah & compound growth.',
         }
       : {
           title: 'Senior Investor Boss 👑',
-          bg: 'bg-[#10D989] text-black',
+          bg: 'bg-[#C8F7E1] text-black',
           sub: 'Padu teruk! Street smarts kewangan kau memang level Boss. Scammer tengok kau pun auto lari!',
         };
 
   return (
     <section className="max-w-4xl mx-auto font-jakarta flex flex-col gap-5 pb-12">
       {/* Header Section */}
-      <div className="bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-5 sm:p-6 text-center flex flex-col items-center gap-2">
-        <span className="px-3.5 py-1 bg-[#FDE047] border-[3px] border-black rounded-xl shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] font-black text-xs text-black uppercase">
+      <div className="bg-gradient-to-r from-[#D1FAE5] via-[#E0F2FE] to-[#FCE7F3] border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-5 sm:p-6 text-center flex flex-col items-center gap-2">
+        <span className="px-4 py-1 bg-[#FEF08A] border-[3px] border-black rounded-full shadow-[3px_3px_0px_#0F172A] font-black text-xs sm:text-sm text-black">
           🎓 TAB 9: FINAL BOSS QUIZ
         </span>
-        <h1 className="text-xl sm:text-3xl font-black text-black tracking-tight">
+        <h1 className="text-2xl sm:text-4xl font-black text-black tracking-tight">
           Graduate Dari InvestLAH? Boss Level Quiz! 🎓
         </h1>
-        <p className="text-xs sm:text-sm font-bold text-neutral-700 max-w-xl">
+        <p className="text-xs sm:text-sm font-bold text-slate-700 max-w-xl">
           Dah khatam semua modul? Jom test street smarts kau.
         </p>
       </div>
@@ -378,10 +375,10 @@ export const Tab9BossQuiz: React.FC<Tab9BossQuizProps> = ({
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-5 sm:p-7 flex flex-col gap-5"
+          className="bg-white border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-5 sm:p-7 flex flex-col gap-5"
         >
           {/* Top Bar with Dev Simulate Toggle */}
-          <div className="flex flex-wrap items-center justify-between gap-2 border-b-[3px] border-black pb-3">
+          <div className="flex flex-wrap items-center justify-between gap-2 border-b-[2px] border-black/15 pb-3">
             <div className="flex items-center gap-2">
               <span className="font-black text-sm sm:text-base text-black">
                 🏅 PROGRESS LENCANA MODUL ({earnedCount}/8)
@@ -395,10 +392,10 @@ export const Tab9BossQuiz: React.FC<Tab9BossQuizProps> = ({
                 setDevUnlocked(next);
                 if (next) onUnlockAllBadges();
               }}
-              className={`px-3 py-1 border-[2px] border-black rounded-lg font-black text-xs cursor-pointer shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] ${
+              className={`px-3.5 py-1 border-[2px] border-black rounded-full font-black text-xs cursor-pointer shadow-[2px_2px_0px_#0F172A] ${
                 devUnlocked
-                  ? 'bg-[#10D989] text-black'
-                  : 'bg-[#FDE047] text-black'
+                  ? 'bg-[#C8F7E1] text-black'
+                  : 'bg-[#FEF08A] text-black'
               }`}
             >
               {devUnlocked
@@ -417,10 +414,10 @@ export const Tab9BossQuiz: React.FC<Tab9BossQuizProps> = ({
                   key={slot.id}
                   type="button"
                   onClick={() => onNavigate(slot.id)}
-                  className={`p-3.5 border-[3px] border-black rounded-xl text-center flex flex-col items-center justify-center gap-1.5 transition-all cursor-pointer ${
+                  className={`p-3.5 border-[3px] border-black rounded-2xl text-center flex flex-col items-center justify-center gap-1.5 transition-all cursor-pointer ${
                     hasIt
-                      ? 'bg-[#10D989] text-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5'
-                      : 'bg-[#F3F4F6] text-neutral-500 border-dashed hover:bg-neutral-200'
+                      ? 'bg-[#C8F7E1] text-black shadow-[4px_4px_0px_#0F172A] hover:-translate-y-0.5'
+                      : 'bg-[#F7F9F6] text-slate-500 border-dashed hover:bg-slate-100'
                   }`}
                 >
                   <span className="text-3xl">
@@ -429,7 +426,7 @@ export const Tab9BossQuiz: React.FC<Tab9BossQuizProps> = ({
                   <span className="font-black text-xs text-black leading-tight">
                     {slot.label}
                   </span>
-                  <span className="text-[10px] font-bold text-neutral-800">
+                  <span className="text-[10px] font-bold text-slate-600">
                     {slot.moduleTitle}
                   </span>
                 </button>
@@ -439,11 +436,13 @@ export const Tab9BossQuiz: React.FC<Tab9BossQuizProps> = ({
 
           {/* Padlock Gate Box */}
           <div
-            className={`border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 text-center flex flex-col items-center gap-3 ${
-              isUnlocked ? 'bg-[#FDE047]' : 'bg-[#F3F4F6]'
+            className={`border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-6 text-center flex flex-col items-center gap-3 ${
+              isUnlocked
+                ? 'bg-gradient-to-br from-[#FEF08A] via-[#C8F7E1] to-[#BEE3FF]'
+                : 'bg-[#F7F9F6]'
             }`}
           >
-            <div className="w-20 h-20 bg-white border-[3px] border-black rounded-2xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center text-5xl animate-bob">
+            <div className="w-20 h-20 bg-white border-[3px] border-black rounded-2xl shadow-[4px_4px_0px_#0F172A] flex items-center justify-center text-5xl animate-bob">
               {isUnlocked ? '🔓' : '🔒'}
             </div>
 
@@ -452,14 +451,14 @@ export const Tab9BossQuiz: React.FC<Tab9BossQuizProps> = ({
                 <h2 className="text-lg sm:text-2xl font-black text-black">
                   Padlock Dah Pecah! Boss Arena Dibuka 🔓
                 </h2>
-                <p className="text-xs sm:text-sm font-bold text-neutral-800 max-w-md">
+                <p className="text-xs sm:text-sm font-bold text-slate-800 max-w-md">
                   10 soalan situasi sebenar (compound growth, TikTok scam,
                   PTPTN, Syariah &amp; ETF). Buktikan kau bukan lagi noob!
                 </p>
                 <button
                   type="button"
                   onClick={handleRestartQuiz}
-                  className="neo-btn mt-1 px-8 py-3.5 bg-[#10D989] rounded-xl font-black text-base sm:text-lg text-black cursor-pointer"
+                  className="neo-btn mt-1 px-8 py-3.5 bg-[#10D989] rounded-2xl font-black text-base sm:text-lg text-black cursor-pointer"
                 >
                   Mulakan Final Boss Quiz 🎮
                 </button>
@@ -469,7 +468,7 @@ export const Tab9BossQuiz: React.FC<Tab9BossQuizProps> = ({
                 <h2 className="text-lg sm:text-2xl font-black text-black">
                   Arena Masih Berkunci Bro 🔒
                 </h2>
-                <p className="text-xs sm:text-sm font-bold text-neutral-700 max-w-md">
+                <p className="text-xs sm:text-sm font-bold text-slate-700 max-w-md">
                   Kau baru kumpul <b>{earnedCount}/8 lencana</b>. Selesaikan
                   modul yang belum khatam atau tekan butang unlock kat bawah!
                 </p>
@@ -477,7 +476,7 @@ export const Tab9BossQuiz: React.FC<Tab9BossQuizProps> = ({
                   <button
                     type="button"
                     onClick={() => triggerShake()}
-                    className="neo-btn px-6 py-3 bg-[#FF4766] text-white rounded-xl font-black text-xs sm:text-sm cursor-pointer"
+                    className="neo-btn px-6 py-3 bg-[#FF4766] text-white rounded-2xl font-black text-xs sm:text-sm cursor-pointer"
                   >
                     Kumpul 8 Lencana Dulu Bro 🛑
                   </button>
@@ -487,7 +486,7 @@ export const Tab9BossQuiz: React.FC<Tab9BossQuizProps> = ({
                       setDevUnlocked(true);
                       onUnlockAllBadges();
                     }}
-                    className="neo-btn px-6 py-3 bg-[#10D989] text-black rounded-xl font-black text-xs sm:text-sm cursor-pointer"
+                    className="neo-btn px-6 py-3 bg-[#10D989] text-black rounded-2xl font-black text-xs sm:text-sm cursor-pointer"
                   >
                     Unlock Sekarang (Dev Simulate) 🔓
                   </button>
@@ -509,16 +508,16 @@ export const Tab9BossQuiz: React.FC<Tab9BossQuizProps> = ({
           className="flex flex-col gap-4"
         >
           {/* Thick Progress Bar */}
-          <div className="bg-white border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-3 flex flex-col gap-2">
+          <div className="bg-white border-[3px] border-black rounded-2xl shadow-[4px_4px_0px_#0F172A] p-3 flex flex-col gap-2">
             <div className="flex items-center justify-between text-xs font-black uppercase">
               <span>
                 🔥 SOALAN {qIdx + 1} / {BOSS_QUESTIONS.length}
               </span>
-              <span className="px-2.5 py-0.5 bg-[#FDE047] border-[2px] border-black rounded-md">
+              <span className="px-2.5 py-0.5 bg-purple-200 border-[2px] border-black rounded-full">
                 {currentQuestion.tag}
               </span>
             </div>
-            <div className="w-full h-5 bg-[#F3F4F6] border-[3px] border-black rounded-full overflow-hidden">
+            <div className="w-full h-5 bg-[#F7F9F6] border-[3px] border-black rounded-full overflow-hidden">
               <div
                 style={{ width: `${progressPct}%` }}
                 className="h-full bg-[#10D989] border-r-[3px] border-black transition-all duration-300"
@@ -527,9 +526,9 @@ export const Tab9BossQuiz: React.FC<Tab9BossQuizProps> = ({
           </div>
 
           {/* Question Card */}
-          <div className="bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-5 sm:p-7 flex flex-col gap-5">
+          <div className="bg-white border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-5 sm:p-7 flex flex-col gap-5">
             <div className="flex flex-col items-center text-center gap-2">
-              <div className="w-14 h-14 bg-[#FDE047] border-[3px] border-black rounded-xl shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center text-3xl">
+              <div className="w-14 h-14 bg-[#FEF08A] border-[3px] border-black rounded-2xl shadow-[3px_3px_0px_#0F172A] flex items-center justify-center text-3xl">
                 {currentQuestion.emoji}
               </div>
               <h2 className="text-base sm:text-xl font-black text-black leading-snug max-w-2xl mt-1">
@@ -543,7 +542,13 @@ export const Tab9BossQuiz: React.FC<Tab9BossQuizProps> = ({
                 const isSelected = currentPicked === idx;
                 const isCorrectOption = idx === currentQuestion.correctIndex;
 
-                let btnStyle = 'bg-[#F3F4F6] hover:bg-[#FDE047] text-black';
+                const softOptionBgs = [
+                  'bg-blue-100 hover:bg-blue-200 text-black',
+                  'bg-[#C8F7E1] hover:bg-emerald-200 text-black',
+                  'bg-[#FEF08A] hover:bg-yellow-300 text-black',
+                  'bg-pink-100 hover:bg-pink-200 text-black',
+                ];
+                let btnStyle = softOptionBgs[idx];
                 let badgeIcon = 'ABCD'[idx];
 
                 if (currentPicked !== null) {
@@ -554,7 +559,7 @@ export const Tab9BossQuiz: React.FC<Tab9BossQuizProps> = ({
                     btnStyle = 'bg-[#FF4766] text-white';
                     badgeIcon = '❌';
                   } else {
-                    btnStyle = 'bg-white text-neutral-400 opacity-65';
+                    btnStyle = 'bg-white text-slate-400 opacity-65';
                   }
                 }
 
@@ -564,7 +569,7 @@ export const Tab9BossQuiz: React.FC<Tab9BossQuizProps> = ({
                     type="button"
                     disabled={currentPicked !== null}
                     onClick={(e) => handleSelectOption(idx, e)}
-                    className={`neo-btn ${btnStyle} rounded-xl p-3.5 flex items-start gap-3 text-left font-extrabold text-xs sm:text-sm cursor-pointer disabled:cursor-default`}
+                    className={`neo-btn ${btnStyle} rounded-2xl p-3.5 flex items-start gap-3 text-left font-extrabold text-xs sm:text-sm cursor-pointer disabled:cursor-default`}
                   >
                     <span className="w-7 h-7 shrink-0 bg-white text-black border-[2px] border-black rounded-lg flex items-center justify-center font-black text-xs">
                       {badgeIcon}
@@ -584,10 +589,10 @@ export const Tab9BossQuiz: React.FC<Tab9BossQuizProps> = ({
                   className="flex flex-col gap-3 pt-1"
                 >
                   <div
-                    className={`border-[3px] border-black rounded-xl p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] ${
+                    className={`border-[3px] border-black rounded-2xl p-4 shadow-[4px_4px_0px_#0F172A] ${
                       currentPicked === currentQuestion.correctIndex
-                        ? 'bg-[#10D989] text-black'
-                        : 'bg-[#FF4766] text-white'
+                        ? 'bg-[#D1FAE5] text-black'
+                        : 'bg-[#FFE4E6] text-black'
                     }`}
                   >
                     <div className="font-black text-sm sm:text-base mb-1">
@@ -604,7 +609,7 @@ export const Tab9BossQuiz: React.FC<Tab9BossQuizProps> = ({
                     <button
                       type="button"
                       onClick={handleNext}
-                      className="neo-btn px-7 py-3 bg-[#FDE047] text-black rounded-xl font-black text-xs sm:text-sm cursor-pointer"
+                      className="neo-btn px-7 py-3 bg-[#FEF08A] text-black rounded-2xl font-black text-xs sm:text-sm cursor-pointer"
                     >
                       {qIdx + 1 < BOSS_QUESTIONS.length
                         ? 'Soalan Seterusnya ➡️'
@@ -629,26 +634,26 @@ export const Tab9BossQuiz: React.FC<Tab9BossQuizProps> = ({
           className="flex flex-col gap-5"
         >
           {/* Main Graduation Certificate & Score Card */}
-          <div className="bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 sm:p-8 text-center flex flex-col items-center gap-4">
+          <div className="bg-white border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-6 sm:p-8 text-center flex flex-col items-center gap-4">
             {/* Digital "InvestLAH Certified" Graphic Badge */}
-            <div className="w-full max-w-md bg-[#FDE047] border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-5 flex flex-col items-center gap-2 relative">
-              <span className="px-3 py-0.5 bg-black text-white rounded-md font-black text-[10px] uppercase tracking-widest">
+            <div className="w-full max-w-md bg-gradient-to-br from-[#FEF08A] via-[#C8F7E1] to-[#BEE3FF] border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-5 flex flex-col items-center gap-2 relative">
+              <span className="px-3 py-0.5 bg-purple-200 text-black border-[2px] border-black rounded-full font-black text-[10px] uppercase tracking-widest">
                 OFFICIAL DIGITAL CREDENTIAL
               </span>
-              <div className="w-20 h-20 rounded-full bg-[#10D989] border-[3px] border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center text-4xl my-1">
+              <div className="w-20 h-20 rounded-full bg-white border-[3px] border-black shadow-[3px_3px_0px_#0F172A] flex items-center justify-center text-4xl my-1">
                 🎓
               </div>
               <div className="font-mono-rubik text-xl sm:text-2xl text-black tracking-tight">
                 InvestLAH Certified
               </div>
-              <div className="text-xs font-black text-neutral-800">
+              <div className="text-xs font-black text-slate-800">
                 GEN-Z FINANCIAL LITERACY GRADUATE • {riskVibeLabel}
               </div>
             </div>
 
             {/* Score Readout */}
             <div className="flex flex-col items-center gap-2 mt-1">
-              <span className="text-xs font-black uppercase tracking-wider text-neutral-600">
+              <span className="text-xs font-black uppercase tracking-wider text-slate-600">
                 SKOR FINAL BOSS KAU:
               </span>
               <div className="font-mono-rubik text-4xl sm:text-6xl text-black">
@@ -656,19 +661,19 @@ export const Tab9BossQuiz: React.FC<Tab9BossQuizProps> = ({
               </div>
 
               <span
-                className={`px-4 py-1.5 ${rankingInfo.bg} border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-black text-sm sm:text-base`}
+                className={`px-4 py-1.5 ${rankingInfo.bg} border-[3px] border-black rounded-full shadow-[4px_4px_0px_#0F172A] font-black text-sm sm:text-base`}
               >
                 Ranking: {rankingInfo.title}
               </span>
 
-              <p className="text-xs sm:text-sm font-bold text-neutral-700 max-w-lg mt-1">
+              <p className="text-xs sm:text-sm font-bold text-slate-700 max-w-lg mt-1">
                 {rankingInfo.sub}
               </p>
             </div>
 
             {/* Share Toast */}
             {shareToast && (
-              <div className="px-4 py-2 bg-[#10D989] text-black border-[2px] border-black rounded-xl font-black text-xs shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
+              <div className="px-4 py-2 bg-[#C8F7E1] text-black border-[2px] border-black rounded-xl font-black text-xs shadow-[3px_3px_0px_#0F172A]">
                 {shareToast}
               </div>
             )}
@@ -678,7 +683,7 @@ export const Tab9BossQuiz: React.FC<Tab9BossQuizProps> = ({
               <button
                 type="button"
                 onClick={() => setShowReview((prev) => !prev)}
-                className="neo-btn px-5 py-3 bg-[#3B82F6] text-white rounded-xl font-black text-xs sm:text-sm cursor-pointer"
+                className="neo-btn px-5 py-3 bg-blue-200 text-black rounded-2xl font-black text-xs sm:text-sm cursor-pointer"
               >
                 Review Salah Kat Mana 🔍
               </button>
@@ -686,7 +691,7 @@ export const Tab9BossQuiz: React.FC<Tab9BossQuizProps> = ({
               <button
                 type="button"
                 onClick={handleShareResult}
-                className="neo-btn px-5 py-3 bg-[#10D989] text-black rounded-xl font-black text-xs sm:text-sm cursor-pointer"
+                className="neo-btn px-5 py-3 bg-[#10D989] text-black rounded-2xl font-black text-xs sm:text-sm cursor-pointer"
               >
                 Share Result 📲
               </button>
@@ -694,7 +699,7 @@ export const Tab9BossQuiz: React.FC<Tab9BossQuizProps> = ({
               <button
                 type="button"
                 onClick={handleRestartQuiz}
-                className="neo-btn px-5 py-3 bg-[#FDE047] text-black rounded-xl font-black text-xs sm:text-sm cursor-pointer"
+                className="neo-btn px-5 py-3 bg-[#FEF08A] text-black rounded-2xl font-black text-xs sm:text-sm cursor-pointer"
               >
                 Ulang Kuiz 🔄
               </button>
@@ -708,9 +713,9 @@ export const Tab9BossQuiz: React.FC<Tab9BossQuizProps> = ({
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
-                className="bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-5 flex flex-col gap-3.5"
+                className="bg-white border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-5 flex flex-col gap-3.5"
               >
-                <h3 className="text-base sm:text-lg font-black text-black border-b-[2px] border-black pb-2">
+                <h3 className="text-base sm:text-lg font-black text-black border-b-[2px] border-black/15 pb-2">
                   🔍 Post-Mortem Jawapan Kau (10 Soalan)
                 </h3>
 
@@ -720,7 +725,7 @@ export const Tab9BossQuiz: React.FC<Tab9BossQuizProps> = ({
                   return (
                     <div
                       key={q.id}
-                      className={`border-[2px] border-black rounded-xl p-3.5 flex flex-col gap-1.5 ${
+                      className={`border-[2px] border-black rounded-2xl p-3.5 flex flex-col gap-1.5 ${
                         isCorrect ? 'bg-[#D1FAE5]' : 'bg-[#FFE4E6]'
                       }`}
                     >
@@ -729,7 +734,7 @@ export const Tab9BossQuiz: React.FC<Tab9BossQuizProps> = ({
                           Soalan {idx + 1}: {q.tag}
                         </span>
                         <span
-                          className={`px-2 py-0.5 border border-black rounded font-black text-[11px] ${
+                          className={`px-2.5 py-0.5 border border-black rounded-full font-black text-[11px] ${
                             isCorrect
                               ? 'bg-[#10D989] text-black'
                               : 'bg-[#FF4766] text-white'
@@ -753,7 +758,7 @@ export const Tab9BossQuiz: React.FC<Tab9BossQuizProps> = ({
                         Jawapan tepat: {q.options[q.correctIndex]}
                       </div>
 
-                      <p className="text-xs font-semibold text-neutral-700">
+                      <p className="text-xs font-semibold text-slate-700">
                         💡 {q.explanation}
                       </p>
                     </div>

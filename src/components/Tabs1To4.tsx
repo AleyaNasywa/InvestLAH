@@ -82,24 +82,24 @@ const BOBA_TIMELINE: Record<number, YearData> = {
 const FEATURE_CARDS = [
   {
     badge: 'SENANG HADAM',
-    badgeBg: 'bg-[#3B82F6] text-white',
-    cardBg: 'bg-[#DBEAFE]',
+    badgeBg: 'bg-blue-200 text-black',
+    cardBg: 'bg-blue-100',
     emoji: '🎉',
     title: '🤓 Takde Ayat Skema Nerd',
     body: 'Bahasa pasar je. Zero jargon, takde pening kepala.',
   },
   {
     badge: 'MESRA NOOB',
-    badgeBg: 'bg-[#10D989] text-black',
-    cardBg: 'bg-[#D1FAE5]',
+    badgeBg: 'bg-[#FEF08A] text-black',
+    cardBg: 'bg-[#C8F7E1]',
     emoji: '📈',
     title: '🚀 Belajar Invest Dari Zero',
     body: 'Step-by-step untuk beginner. Dari noob terus reti gandakan duit!',
   },
   {
     badge: 'REALISTIK',
-    badgeBg: 'bg-[#FDE047] text-black',
-    cardBg: 'bg-[#FEF9C3]',
+    badgeBg: 'bg-purple-200 text-black',
+    cardBg: 'bg-pink-100',
     emoji: '📉',
     title: '💸 Reality Check (No Delulu)',
     body: 'Kira betul-betul ikut bajet student. Tolak siap-siap duit healing & Maggi.',
@@ -120,48 +120,48 @@ export const Tab1BaruNakUp: React.FC<{
 
   return (
     <section className="max-w-4xl mx-auto flex flex-col gap-5 pb-10">
-      {/* Sharp High-Contrast Hero Header — Solid White with Bold Accents */}
-      <div className="relative overflow-hidden bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] px-5 py-6 text-center flex flex-col items-center gap-2.5">
+      {/* Soft-Pop Hero Header */}
+      <div className="relative overflow-hidden bg-gradient-to-r from-[#D1FAE5] via-[#E0F2FE] to-[#FCE7F3] border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] px-5 py-6 text-center flex flex-col items-center gap-2.5">
         <div
-          className="hidden sm:flex absolute left-5 top-5 w-11 h-11 bg-[#FDE047] border-[3px] border-black rounded-xl shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] items-center justify-center text-xl select-none"
+          className="hidden sm:flex absolute left-5 top-5 w-11 h-11 bg-[#FEF08A] border-[3px] border-black rounded-2xl shadow-[3px_3px_0px_#0F172A] items-center justify-center text-xl select-none"
           aria-hidden="true"
         >
           🧋
         </div>
 
         <div
-          className="hidden sm:flex absolute right-5 top-5 w-11 h-11 bg-[#10D989] border-[3px] border-black rounded-xl shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] items-center justify-center text-xl select-none"
+          className="hidden sm:flex absolute right-5 top-5 w-11 h-11 bg-[#C8F7E1] border-[3px] border-black rounded-2xl shadow-[3px_3px_0px_#0F172A] items-center justify-center text-xl select-none"
           aria-hidden="true"
         >
           💸
         </div>
 
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#FDE047] border-[3px] border-black rounded-xl shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] font-black text-xs text-black uppercase">
+        <span className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-[#FEF08A] border-[3px] border-black rounded-full shadow-[3px_3px_0px_#0F172A] font-black text-xs sm:text-sm text-black">
           ⚡ InvestLAH
         </span>
 
-        <h1 className="text-xl sm:text-2xl md:text-3xl font-black text-black tracking-tight leading-tight">
+        <h1 className="text-xl sm:text-3xl font-black text-black tracking-tight leading-tight">
           Duit Sentiasa Susut Nilai.{' '}
-          <span className="inline-block bg-[#10D989] px-3 py-0.5 border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] -rotate-1 mt-1 sm:mt-0">
+          <span className="inline-block bg-[#FEF08A] px-3 py-0.5 border-[3px] border-black rounded-2xl shadow-[4px_4px_0px_#0F172A] -rotate-1 mt-1 sm:mt-0">
             Kau Sedar Tak?
           </span>
         </h1>
 
-        <p className="text-xs sm:text-sm font-extrabold text-neutral-700 max-w-lg">
+        <p className="text-xs sm:text-sm font-extrabold text-slate-700 max-w-lg">
           Tarik mesin masa ni. Tengok boba kau lesap satu-satu.
         </p>
       </div>
 
       {/* Compact Subtab Switcher to Prevent Excessive Vertical Scrolling */}
       <div className="flex justify-center">
-        <div className="inline-flex p-1.5 bg-white border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] gap-1.5">
+        <div className="inline-flex p-1.5 bg-white border-[3px] border-black rounded-full shadow-[4px_4px_0px_#0F172A] gap-1.5">
           <button
             type="button"
             onClick={() => setSubtab('boba')}
-            className={`px-4 py-2 rounded-lg font-black text-xs sm:text-sm transition-all cursor-pointer ${
+            className={`px-4 py-2 rounded-full font-black text-xs sm:text-sm transition-all cursor-pointer ${
               subtab === 'boba'
-                ? 'bg-[#FDE047] text-black border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]'
-                : 'border-[2px] border-transparent hover:bg-[#F3F4F6]'
+                ? 'bg-[#DCCBFF] text-black border-[2px] border-black shadow-[2px_2px_0px_#0F172A]'
+                : 'border-[2px] border-transparent hover:bg-slate-100'
             }`}
           >
             1️⃣ Mesin Masa Boba 🧋
@@ -169,10 +169,10 @@ export const Tab1BaruNakUp: React.FC<{
           <button
             type="button"
             onClick={() => setSubtab('why')}
-            className={`px-4 py-2 rounded-lg font-black text-xs sm:text-sm transition-all cursor-pointer ${
+            className={`px-4 py-2 rounded-full font-black text-xs sm:text-sm transition-all cursor-pointer ${
               subtab === 'why'
-                ? 'bg-[#10D989] text-black border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]'
-                : 'border-[2px] border-transparent hover:bg-[#F3F4F6]'
+                ? 'bg-[#DCCBFF] text-black border-[2px] border-black shadow-[2px_2px_0px_#0F172A]'
+                : 'border-[2px] border-transparent hover:bg-slate-100'
             }`}
           >
             2️⃣ Kenapa InvestLAH? ⚡
@@ -186,11 +186,11 @@ export const Tab1BaruNakUp: React.FC<{
           key="tab1-boba"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-5 flex flex-col gap-4"
+          className="bg-white border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-5 flex flex-col gap-4"
         >
-          <div className="flex items-center justify-between flex-wrap gap-3 border-b-[3px] border-black pb-3">
+          <div className="flex items-center justify-between flex-wrap gap-3 border-b-[2px] border-black/15 pb-3">
             <div className="flex items-center gap-2.5">
-              <span className="px-3 py-1 bg-[#FDE047] border-[2px] border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] font-black text-xs uppercase">
+              <span className="px-3 py-1 bg-purple-200 border-[2px] border-black rounded-full shadow-[2px_2px_0px_#0F172A] font-black text-xs uppercase">
                 ⏳ Time Machine
               </span>
               <span className="font-mono-rubik text-xl sm:text-2xl text-black">
@@ -199,16 +199,16 @@ export const Tab1BaruNakUp: React.FC<{
             </div>
 
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="px-3 py-1 bg-[#3B82F6] text-white border-[2px] border-black rounded-lg font-extrabold text-xs">
+              <span className="px-3 py-1 bg-blue-100 text-black border-[2px] border-black rounded-full font-extrabold text-xs">
                 1 Cup ≈ RM{currentData.price.toFixed(2)}
               </span>
               <span
-                className={`px-3 py-1 border-[2px] border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] font-black text-xs sm:text-sm ${
+                className={`px-3 py-1 border-[2px] border-black rounded-full shadow-[2px_2px_0px_#0F172A] font-black text-xs sm:text-sm ${
                   cupsRemaining <= 4
-                    ? 'bg-[#FF4766] text-white'
+                    ? 'bg-pink-200 text-black'
                     : cupsRemaining <= 7
-                    ? 'bg-[#FB923C] text-black'
-                    : 'bg-[#10D989] text-black'
+                    ? 'bg-[#FEF08A] text-black'
+                    : 'bg-[#C8F7E1] text-black'
                 }`}
               >
                 RM50 = {cupsRemaining} Boba 🧋
@@ -233,10 +233,10 @@ export const Tab1BaruNakUp: React.FC<{
                       4
                     )
                   }
-                  className={`h-20 rounded-xl flex flex-col items-center justify-center gap-1 cursor-pointer select-none transition-colors ${
+                  className={`h-20 rounded-2xl flex flex-col items-center justify-center gap-1 cursor-pointer select-none transition-colors ${
                     isLesap
-                      ? 'bg-[#F3F4F6] border-[2px] border-dashed border-black/50 text-neutral-500'
-                      : 'bg-[#FDE047] border-[3px] border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] text-black hover:bg-[#10D989]'
+                      ? 'bg-[#F7F9F6] border-[2px] border-dashed border-black/40 text-slate-400'
+                      : 'bg-[#FEF08A] border-[3px] border-black shadow-[3px_3px_0px_#0F172A] text-black hover:bg-[#C8F7E1]'
                   }`}
                 >
                   {isLesap ? (
@@ -282,7 +282,7 @@ export const Tab1BaruNakUp: React.FC<{
               aria-label="Slider Tahun 2019 hingga 2026"
             />
 
-            <div className="flex items-center justify-between text-[11px] font-black uppercase tracking-wide text-black gap-2">
+            <div className="flex items-center justify-between text-[11px] font-black uppercase tracking-wide text-slate-700 gap-2">
               <button
                 type="button"
                 onClick={() => setYear(2019)}
@@ -290,7 +290,7 @@ export const Tab1BaruNakUp: React.FC<{
               >
                 2019 (Murah Meriah)
               </button>
-              <span className="px-2.5 py-0.5 bg-[#FDE047] border-[2px] border-black rounded-md text-[10px] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+              <span className="px-2.5 py-0.5 bg-[#FEF08A] border-[2px] border-black rounded-full text-[10px] shadow-[2px_2px_0px_#0F172A]">
                 ↔️ GESER SLIDER TAHUN
               </span>
               <button
@@ -303,10 +303,10 @@ export const Tab1BaruNakUp: React.FC<{
             </div>
           </div>
 
-          {/* High-Contrast Alert Box */}
+          {/* Soft-Pop Alert Box */}
           <div
-            className={`border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-3.5 flex items-center gap-3 ${
-              year >= 2024 ? 'bg-[#FF4766] text-white' : 'bg-[#F3F4F6] text-black'
+            className={`border-[3px] border-black rounded-2xl shadow-[4px_4px_0px_#0F172A] p-3.5 flex items-center gap-3 ${
+              year >= 2024 ? 'bg-[#FFE4E6] text-black' : 'bg-[#F7F9F6] text-black'
             }`}
           >
             <span className="text-2xl shrink-0">
@@ -321,7 +321,7 @@ export const Tab1BaruNakUp: React.FC<{
             <button
               type="button"
               onClick={() => setSubtab('why')}
-              className="neo-btn px-6 py-3 bg-[#10D989] rounded-xl font-black text-xs sm:text-sm text-black cursor-pointer"
+              className="neo-btn px-6 py-3 bg-[#10D989] rounded-2xl font-black text-xs sm:text-sm text-black cursor-pointer"
             >
               Habis Tu, Macam Mana Nak Selamatkan Duit? 👉
             </button>
@@ -337,14 +337,14 @@ export const Tab1BaruNakUp: React.FC<{
           animate={{ opacity: 1, y: 0 }}
           className="flex flex-col gap-5"
         >
-          <div className="bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-5 text-center flex flex-col items-center gap-2">
-            <span className="px-3 py-1 bg-[#FDE047] border-[2px] border-black rounded-lg font-black text-[11px] uppercase tracking-wider shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+          <div className="bg-purple-200 border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-5 text-center flex flex-col items-center gap-2">
+            <span className="px-3 py-1 bg-white border-[2px] border-black rounded-full font-black text-[11px] uppercase tracking-wider shadow-[2px_2px_0px_#0F172A]">
               PLAYBOOK KEWANGAN BUDAK UNI
             </span>
             <h2 className="text-xl sm:text-2xl font-black text-black tracking-tight">
               ⚡ Sebab Tu Kitorang Bina INVESTLAH!
             </h2>
-            <p className="text-xs sm:text-sm font-bold text-neutral-700 max-w-xl">
+            <p className="text-xs sm:text-sm font-bold text-slate-800 max-w-xl">
               Swipe atau tap kad kat bawah. Zero ayat skema, terus masuk point!
             </p>
           </div>
@@ -358,11 +358,11 @@ export const Tab1BaruNakUp: React.FC<{
                   whileHover={{ y: -3 }}
                   whileTap={{ scale: 0.96, rotate: -1 }}
                   onClick={() => setActiveSlide(idx)}
-                  className={`min-w-[82%] sm:min-w-[65%] md:min-w-0 snap-center ${card.cardBg} border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-5 flex flex-col justify-between gap-3 cursor-pointer select-none`}
+                  className={`min-w-[82%] sm:min-w-[65%] md:min-w-0 snap-center ${card.cardBg} border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-5 flex flex-col justify-between gap-3 cursor-pointer select-none`}
                 >
                   <div className="flex items-center justify-between gap-2">
                     <span
-                      className={`px-3 py-1 ${card.badgeBg} border-[2px] border-black rounded-lg font-black text-[11px] uppercase tracking-wider shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]`}
+                      className={`px-3 py-1 ${card.badgeBg} border-[2px] border-black rounded-full font-black text-[11px] uppercase tracking-wider shadow-[2px_2px_0px_#0F172A]`}
                     >
                       {card.badge}
                     </span>
@@ -373,7 +373,7 @@ export const Tab1BaruNakUp: React.FC<{
                     <h3 className="text-base sm:text-lg font-black text-black leading-tight">
                       {card.title}
                     </h3>
-                    <p className="text-xs sm:text-sm font-bold text-neutral-900 leading-relaxed mt-1.5">
+                    <p className="text-xs sm:text-sm font-bold text-slate-800 leading-relaxed mt-1.5">
                       {card.body}
                     </p>
                   </div>
@@ -545,7 +545,7 @@ export const RISK_PROFILES: Record<
     emoji: '🛡️',
     nick: 'Main ASB je, tidur lena.',
     tag: '0–5 Pts • Safe Space Defender',
-    bgClass: 'bg-[#3B82F6] text-white',
+    bgClass: 'bg-blue-200 text-black',
     line: 'Main ASB je, tidur lena! Kau tak kuasa nak pening tengok chart merah. Janji modal 100% selamat & return masuk steady tiap tahun.',
     mix: 80,
     stats: [95, 30, 20],
@@ -563,7 +563,7 @@ export const RISK_PROFILES: Record<
     emoji: '⚖️',
     nick: 'Main tengah-tengah, chill tapi masyuk.',
     tag: '6–15 Pts • Balanced Bestie',
-    bgClass: 'bg-[#FDE047] text-black',
+    bgClass: 'bg-purple-200 text-black',
     line: 'Main tengah-tengah, chill tapi masyuk! Separuh duit kau park kat tempat kebal, separuh lagi biar kerja keras kejar compound growth.',
     mix: 60,
     stats: [65, 65, 55],
@@ -581,7 +581,7 @@ export const RISK_PROFILES: Record<
     emoji: '🎢',
     nick: 'Suka volatility, jantung kental.',
     tag: '>15 Pts • Diamond Hands Bro',
-    bgClass: 'bg-[#FB923C] text-black',
+    bgClass: 'bg-pink-200 text-black',
     line: 'Suka volatility, jantung kental! Market merah kau nampak macam diskaun 11.11. Target kau nak grow bag paling maksimum long-term!',
     mix: 30,
     stats: [35, 95, 90],
@@ -616,7 +616,6 @@ export const Tab2RiskProfile: React.FC<Tab2Props> = ({
 
   const handleSelectOption = (optIndex: number, e: React.MouseEvent) => {
     burstEmoji(e.clientX, e.clientY, rnd(['⚡', '🔥', '👌']), 4);
-    // Each question awards 0, 1, 2, or 3 pts (0-5 pts = Safe Space Defender, 6-15 pts = Balanced Bestie, >15 pts = Diamond Hands Bro)
     const nextAns = [...answers];
     nextAns[qIdx] = optIndex;
     setAnswers(nextAns);
@@ -642,28 +641,28 @@ export const Tab2RiskProfile: React.FC<Tab2Props> = ({
   return (
     <section className="max-w-4xl mx-auto flex flex-col gap-5 pb-10">
       <div className="text-center flex flex-col items-center gap-2 pt-1">
-        <span className="px-3.5 py-1 bg-[#FDE047] border-[3px] border-black rounded-xl shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] font-black text-xs uppercase">
+        <span className="px-4 py-1 bg-purple-200 border-[3px] border-black rounded-full shadow-[3px_3px_0px_#0F172A] font-black text-xs sm:text-sm">
           🎲 TAB 2: VIBE CHECK RISIKO
         </span>
-        <h1 className="text-xl sm:text-2xl md:text-3xl font-black text-black tracking-tight leading-tight">
+        <h1 className="text-xl sm:text-3xl font-black text-black tracking-tight leading-tight">
           Are You Ready?!{' '}
-          <span className="inline-block bg-[#10D989] px-3 py-0.5 border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] -rotate-1">
+          <span className="inline-block bg-[#FEF08A] px-3 py-0.5 border-[3px] border-black rounded-2xl shadow-[4px_4px_0px_#0F172A] -rotate-1">
             Check Jiwa Pelabur Kau!
           </span>
         </h1>
-        <p className="text-xs sm:text-sm font-bold text-neutral-700 max-w-lg">
+        <p className="text-xs sm:text-sm font-bold text-slate-600 max-w-lg">
           10 flashcard pantas nak check DNA pelabur kau. Jujur je, takde jawapan
           salah!
         </p>
       </div>
 
       {phase === 'start' && (
-        <div className="bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 sm:p-8 text-center flex flex-col items-center gap-3.5">
+        <div className="bg-gradient-to-br from-[#D1FAE5] via-[#FEF08A] to-[#FCE7F3] border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-6 sm:p-8 text-center flex flex-col items-center gap-3.5">
           <span className="text-5xl sm:text-6xl animate-bob">🧬</span>
           <h2 className="text-xl sm:text-2xl font-black text-black">
             Apa Vibe Pelabur Kau Sebenarnya? 👀
           </h2>
-          <p className="text-xs sm:text-sm font-bold text-neutral-800 max-w-md">
+          <p className="text-xs sm:text-sm font-bold text-slate-800 max-w-md">
             Adakah kau geng <b>Safe Space Defender 🛡️</b>,{' '}
             <b>Balanced Bestie ⚖️</b>, atau <b>Diamond Hands Bro 🎢</b>? Jom
             test sekarang!
@@ -676,7 +675,7 @@ export const Tab2RiskProfile: React.FC<Tab2Props> = ({
               setAnswers([]);
               setPhase('quiz');
             }}
-            className="neo-btn mt-1 px-7 py-3.5 bg-[#10D989] rounded-xl font-black text-sm sm:text-base text-black cursor-pointer"
+            className="neo-btn mt-1 px-7 py-3.5 bg-[#10D989] rounded-2xl font-black text-sm sm:text-base text-black cursor-pointer"
           >
             Start Vibe Check Sekarang! 🔥
           </button>
@@ -685,7 +684,7 @@ export const Tab2RiskProfile: React.FC<Tab2Props> = ({
             <button
               type="button"
               onClick={() => setPhase('result')}
-              className="mt-1 px-4 py-1.5 bg-[#F3F4F6] hover:bg-[#FDE047] border-[2px] border-black rounded-lg font-extrabold text-xs shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] cursor-pointer"
+              className="mt-1 px-4 py-1.5 bg-white hover:bg-[#FEF08A] border-[2px] border-black rounded-full font-extrabold text-xs shadow-[2px_2px_0px_#0F172A] cursor-pointer"
             >
               Tengok Result Kau Sebelum Ni ({RISK_PROFILES[savedRisk].name})
             </button>
@@ -701,7 +700,7 @@ export const Tab2RiskProfile: React.FC<Tab2Props> = ({
               Soalan {qIdx + 1} / {RISK_QUESTIONS.length}
             </span>
           </div>
-          <div className="w-full h-5 bg-white border-[3px] border-black rounded-full shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+          <div className="w-full h-5 bg-white border-[3px] border-black rounded-full shadow-[3px_3px_0px_#0F172A] overflow-hidden">
             <motion.div
               initial={{ width: 0 }}
               animate={{
@@ -718,9 +717,9 @@ export const Tab2RiskProfile: React.FC<Tab2Props> = ({
               animate={{ opacity: 1, x: 0, rotate: 0 }}
               exit={{ opacity: 0, x: -40, rotate: -1.5 }}
               transition={{ duration: 0.22 }}
-              className="bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 text-center flex flex-col items-center gap-2.5"
+              className="bg-white border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-6 text-center flex flex-col items-center gap-2.5"
             >
-              <span className="px-3 py-0.5 bg-[#FDE047] border-[2px] border-black rounded-md font-black text-xs uppercase shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+              <span className="px-3 py-0.5 bg-purple-200 border-[2px] border-black rounded-full font-black text-xs uppercase shadow-[2px_2px_0px_#0F172A]">
                 FLASHCARD {qIdx + 1} / 10
               </span>
               <span className="text-4xl sm:text-5xl my-1">
@@ -735,20 +734,20 @@ export const Tab2RiskProfile: React.FC<Tab2Props> = ({
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {RISK_QUESTIONS[qIdx].o.map((optText, j) => {
               const bgs = [
-                'bg-white hover:bg-[#3B82F6] hover:text-white',
-                'bg-white hover:bg-[#10D989] hover:text-black',
-                'bg-white hover:bg-[#FDE047] hover:text-black',
-                'bg-white hover:bg-[#FB923C] hover:text-black',
+                'bg-blue-100 hover:bg-blue-200',
+                'bg-[#C8F7E1] hover:bg-emerald-200',
+                'bg-[#FEF08A] hover:bg-yellow-300',
+                'bg-pink-100 hover:bg-pink-200',
               ];
               return (
                 <button
                   key={j}
                   type="button"
                   onClick={(e) => handleSelectOption(j, e)}
-                  className={`neo-btn ${bgs[j]} rounded-xl p-3.5 flex items-center gap-3 text-left font-extrabold text-xs sm:text-sm text-black cursor-pointer`}
+                  className={`neo-btn ${bgs[j]} rounded-2xl p-3.5 flex items-center gap-3 text-left font-extrabold text-xs sm:text-sm text-black cursor-pointer`}
                 >
-                  <span className="w-7 h-7 shrink-0 bg-[#FDE047] text-black border-[2px] border-black rounded-lg flex items-center justify-center font-black text-xs">
-                    {j}pt
+                  <span className="w-7 h-7 shrink-0 bg-white text-black border-[2px] border-black rounded-full flex items-center justify-center font-black text-xs">
+                    {j + 1}
                   </span>
                   <span>{optText}</span>
                 </button>
@@ -761,7 +760,7 @@ export const Tab2RiskProfile: React.FC<Tab2Props> = ({
               <button
                 type="button"
                 onClick={() => setQIdx(qIdx - 1)}
-                className="px-3.5 py-1.5 bg-white border-[2px] border-black rounded-lg font-extrabold text-xs shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] cursor-pointer"
+                className="px-3.5 py-1.5 bg-white border-[2px] border-black rounded-full font-extrabold text-xs shadow-[2px_2px_0px_#0F172A] cursor-pointer"
               >
                 ⬅️ Undo Soalan Sebelum
               </button>
@@ -773,29 +772,29 @@ export const Tab2RiskProfile: React.FC<Tab2Props> = ({
       {phase === 'result' && (
         <div className="flex flex-col gap-5">
           <div
-            className={`${profile.bgClass} border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 text-center flex flex-col items-center gap-2`}
+            className={`${profile.bgClass} border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-6 text-center flex flex-col items-center gap-2`}
           >
-            <div className="px-3 py-0.5 bg-white text-black border-[2px] border-black rounded-md text-[11px] font-black uppercase tracking-wider shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+            <div className="px-3 py-0.5 bg-white text-black border-[2px] border-black rounded-full text-[11px] font-black uppercase tracking-wider shadow-[2px_2px_0px_#0F172A]">
               ⚡ DNA PELABUR KAU DAH LOCK!
             </div>
             <div className="text-6xl animate-bob my-1">{profile.emoji}</div>
             <h2 className="font-mono-rubik text-2xl sm:text-3xl">
               {profile.name}
             </h2>
-            <span className="px-3.5 py-1 bg-white text-black border-[2px] border-black rounded-lg font-black text-xs shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+            <span className="px-3.5 py-1 bg-[#FEF08A] text-black border-[2px] border-black rounded-full font-black text-xs shadow-[2px_2px_0px_#0F172A]">
               {profile.tag} (Skor: {savedScore} pts)
             </span>
             <div className="text-base sm:text-lg font-black mt-1">
               &ldquo;{profile.nick}&rdquo;
             </div>
-            <p className="text-xs sm:text-sm font-bold max-w-lg opacity-95">
+            <p className="text-xs sm:text-sm font-bold max-w-lg opacity-90">
               {profile.line}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Aura Meter */}
-            <div className="bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-5">
+            <div className="bg-white border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-5">
               <div className="text-xs font-black uppercase tracking-wider text-black">
                 METER RISIKO KAU 📊
               </div>
@@ -806,25 +805,25 @@ export const Tab2RiskProfile: React.FC<Tab2Props> = ({
                 <path
                   d="M20 100 A80 80 0 0 1 180 100"
                   fill="none"
-                  stroke="#000000"
+                  stroke="#0F172A"
                   strokeWidth="30"
                 />
                 <path
                   d="M20 100 A80 80 0 0 1 60 30.7"
                   fill="none"
-                  stroke="#3B82F6"
+                  stroke="#BEE3FF"
                   strokeWidth="22"
                 />
                 <path
                   d="M60 30.7 A80 80 0 0 1 140 30.7"
                   fill="none"
-                  stroke="#FDE047"
+                  stroke="#DCCBFF"
                   strokeWidth="22"
                 />
                 <path
                   d="M140 30.7 A80 80 0 0 1 180 100"
                   fill="none"
-                  stroke="#FB923C"
+                  stroke="#FFC9E0"
                   strokeWidth="22"
                 />
                 <g
@@ -839,7 +838,7 @@ export const Tab2RiskProfile: React.FC<Tab2Props> = ({
                     y1="100"
                     x2="100"
                     y2="34"
-                    stroke="#000000"
+                    stroke="#0F172A"
                     strokeWidth="7"
                     strokeLinecap="round"
                   />
@@ -848,7 +847,7 @@ export const Tab2RiskProfile: React.FC<Tab2Props> = ({
                     cy="100"
                     r="11"
                     fill="#10D989"
-                    stroke="#000000"
+                    stroke="#0F172A"
                     strokeWidth="4"
                   />
                 </g>
@@ -861,14 +860,14 @@ export const Tab2RiskProfile: React.FC<Tab2Props> = ({
             </div>
 
             {/* Vibe Stats */}
-            <div className="bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-5 flex flex-col gap-3">
+            <div className="bg-white border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-5 flex flex-col gap-3">
               <div className="text-xs font-black uppercase tracking-wider text-black">
                 STATS KARAKTER PELABUR ⚡
               </div>
               {[
                 {
                   label: '🛡️ Peace of Mind (Safe)',
-                  bg: 'bg-[#3B82F6]',
+                  bg: 'bg-blue-200',
                   w: profile.stats[0],
                 },
                 {
@@ -878,7 +877,7 @@ export const Tab2RiskProfile: React.FC<Tab2Props> = ({
                 },
                 {
                   label: '🎢 Jantung Tahan Volatiliti',
-                  bg: 'bg-[#FB923C]',
+                  bg: 'bg-pink-300',
                   w: profile.stats[2],
                 },
               ].map((st, idx) => (
@@ -887,7 +886,7 @@ export const Tab2RiskProfile: React.FC<Tab2Props> = ({
                     <span>{st.label}</span>
                     <span>{st.w}%</span>
                   </div>
-                  <div className="h-4 border-[2px] border-black rounded-full bg-[#F3F4F6] overflow-hidden">
+                  <div className="h-4 border-[2px] border-black rounded-full bg-[#F7F9F6] overflow-hidden">
                     <div
                       style={{ width: `${st.w}%` }}
                       className={`h-full ${st.bg} border-r-[2px] border-black transition-all duration-700`}
@@ -898,32 +897,32 @@ export const Tab2RiskProfile: React.FC<Tab2Props> = ({
             </div>
 
             {/* Portfolio Breakdown Pie Chart */}
-            <div className="bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-5 text-center flex flex-col items-center justify-center gap-2.5">
+            <div className="bg-white border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-5 text-center flex flex-col items-center justify-center gap-2.5">
               <div className="text-xs font-black uppercase tracking-wider text-black">
                 KOMBO PORTFOLIO NGAM 🥧
               </div>
               <div
                 style={{
-                  background: `conic-gradient(#3B82F6 0 ${profile.mix}%, #FF4766 0)`,
+                  background: `conic-gradient(#BEE3FF 0 ${profile.mix}%, #FFC9E0 0)`,
                 }}
-                className="w-28 h-28 rounded-full border-[3px] border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] relative flex items-center justify-center"
+                className="w-28 h-28 rounded-full border-[3px] border-black shadow-[3px_3px_0px_#0F172A] relative flex items-center justify-center"
               >
                 <div className="w-12 h-12 rounded-full bg-white border-[2px] border-black flex items-center justify-center text-lg">
                   🧪
                 </div>
               </div>
               <div className="flex gap-2 flex-wrap justify-center">
-                <span className="px-3 py-0.5 bg-[#3B82F6] text-white border-[2px] border-black rounded-lg font-extrabold text-xs">
+                <span className="px-3 py-0.5 bg-blue-100 text-black border-[2px] border-black rounded-full font-extrabold text-xs">
                   🛡️ Aset Kebal {profile.mix}%
                 </span>
-                <span className="px-3 py-0.5 bg-[#FF4766] text-white border-[2px] border-black rounded-lg font-extrabold text-xs">
+                <span className="px-3 py-0.5 bg-pink-100 text-black border-[2px] border-black rounded-full font-extrabold text-xs">
                   🎢 Aset Growth {100 - profile.mix}%
                 </span>
               </div>
             </div>
 
             {/* Starter Pack */}
-            <div className="bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-5 flex flex-col justify-between gap-3">
+            <div className="bg-white border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-5 flex flex-col justify-between gap-3">
               <div>
                 <div className="text-xs font-black uppercase tracking-wider text-black mb-2">
                   STARTER PACK CADANGAN 🎒
@@ -932,14 +931,14 @@ export const Tab2RiskProfile: React.FC<Tab2Props> = ({
                   {profile.pack.map((item, idx) => (
                     <span
                       key={idx}
-                      className="px-2.5 py-1 bg-[#F3F4F6] border-[2px] border-black rounded-lg font-extrabold text-xs"
+                      className="px-2.5 py-1 bg-[#FEF08A] border-[2px] border-black rounded-full font-extrabold text-xs"
                     >
                       {item}
                     </span>
                   ))}
                 </div>
               </div>
-              <p className="font-bold text-xs text-black bg-[#FDE047] p-3 border-[2px] border-black rounded-xl">
+              <p className="font-bold text-xs text-slate-700 bg-[#F7F9F6] p-3 border-[2px] border-black rounded-2xl">
                 {profile.tip}
               </p>
             </div>
@@ -953,14 +952,14 @@ export const Tab2RiskProfile: React.FC<Tab2Props> = ({
                 setAnswers([]);
                 setPhase('quiz');
               }}
-              className="neo-btn px-5 py-3 bg-white hover:bg-[#FDE047] rounded-xl font-extrabold text-xs sm:text-sm cursor-pointer"
+              className="neo-btn px-5 py-3 bg-white hover:bg-[#FEF08A] rounded-2xl font-extrabold text-xs sm:text-sm cursor-pointer"
             >
               Retake Vibe Check 🔄
             </button>
             <button
               type="button"
               onClick={() => onNavigate('t3')}
-              className="neo-btn px-7 py-3 bg-[#10D989] rounded-xl font-black text-sm sm:text-base cursor-pointer"
+              className="neo-btn px-7 py-3 bg-[#10D989] rounded-2xl font-black text-sm sm:text-base cursor-pointer"
             >
               Next: Kira Bajet Kau (Tab 3) 💸
             </button>
@@ -1241,20 +1240,20 @@ export const Tab3Bajet: React.FC<Tab3Props> = ({
   return (
     <section className="max-w-5xl mx-auto flex flex-col gap-5 pb-12">
       {/* Persistent Top Status Bar */}
-      <div className="bg-white border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] px-4 py-2.5 flex items-center justify-between flex-wrap gap-2">
-        <span className="px-3 py-0.5 bg-[#FDE047] border-[2px] border-black rounded-md font-black text-xs uppercase tracking-wide">
+      <div className="bg-white border-[3px] border-black rounded-2xl shadow-[4px_4px_0px_#0F172A] px-4 py-2.5 flex items-center justify-between flex-wrap gap-2">
+        <span className="px-3 py-0.5 bg-purple-200 border-[2px] border-black rounded-full font-black text-xs uppercase tracking-wide">
           💸 TAB 3: POKAI TAPI BAJET
         </span>
 
-        <span className="px-3 py-0.5 bg-[#3B82F6] text-white border-[2px] border-black rounded-md font-extrabold text-xs">
+        <span className="px-3 py-0.5 bg-[#FEF08A] text-black border-[2px] border-black rounded-full font-extrabold text-xs">
           🏅 {Math.max(1, badgeCount)}/8 Lencana • {riskVibeLabel}
         </span>
 
         <span
-          className={`px-3.5 py-0.5 border-[2px] border-black rounded-md font-black text-xs ${
+          className={`px-3.5 py-0.5 border-[2px] border-black rounded-full font-black text-xs ${
             surplus >= 0
-              ? 'bg-[#10D989] text-black'
-              : 'bg-[#FF4766] text-white'
+              ? 'bg-[#D1FAE5] text-black'
+              : 'bg-[#FFE4E6] text-[#FF4766]'
           }`}
         >
           {surplus >= 0
@@ -1265,9 +1264,9 @@ export const Tab3Bajet: React.FC<Tab3Props> = ({
 
       {/* Main Title */}
       <div className="text-center flex flex-col items-center gap-1.5">
-        <h1 className="text-xl sm:text-2xl md:text-3xl font-black text-black tracking-tight">
+        <h1 className="text-2xl sm:text-4xl font-black text-black tracking-tight">
           Pokai?{' '}
-          <span className="inline-block bg-[#10D989] px-3 py-0.5 border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] -rotate-1">
+          <span className="inline-block bg-[#10D989] px-3 py-0.5 border-[3px] border-black rounded-2xl shadow-[4px_4px_0px_#0F172A] -rotate-1">
             Bajet La Dulu.
           </span>
         </h1>
@@ -1275,7 +1274,7 @@ export const Tab3Bajet: React.FC<Tab3Props> = ({
 
       {/* 3 Sticky Pill Navigation Steps */}
       <div className="flex justify-center">
-        <div className="inline-flex flex-wrap justify-center gap-1.5 p-1.5 bg-white border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+        <div className="inline-flex flex-wrap justify-center gap-1.5 p-1.5 bg-white border-[3px] border-black rounded-full shadow-[4px_4px_0px_#0F172A]">
           {[
             '1️⃣ Duit Masuk (The Bag)',
             '2️⃣ Duit Terbang (The Damage)',
@@ -1295,10 +1294,10 @@ export const Tab3Bajet: React.FC<Tab3Props> = ({
                   }
                 }
               }}
-              className={`px-4 py-2 rounded-lg font-black text-xs sm:text-sm transition-colors cursor-pointer ${
+              className={`px-4 py-2 rounded-full font-black text-xs sm:text-sm transition-colors cursor-pointer ${
                 subtab === idx
-                  ? 'bg-[#FDE047] border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]'
-                  : 'border-[2px] border-transparent hover:bg-[#F3F4F6]'
+                  ? 'bg-purple-200 border-[2px] border-black shadow-[2px_2px_0px_#0F172A]'
+                  : 'border-[2px] border-transparent hover:bg-slate-100'
               }`}
             >
               {label}
@@ -1315,24 +1314,24 @@ export const Tab3Bajet: React.FC<Tab3Props> = ({
           animate={{ opacity: 1, y: 0 }}
           className="flex flex-col gap-4"
         >
-          <div className="bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-5 flex flex-col gap-4">
-            <div className="flex items-center justify-between flex-wrap gap-2 border-b-[2px] border-black pb-3">
+          <div className="bg-blue-100 border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-5 flex flex-col gap-4">
+            <div className="flex items-center justify-between flex-wrap gap-2 border-b-[2px] border-black/15 pb-3">
               <h3 className="text-base sm:text-lg font-black text-black flex items-center gap-2">
                 <span>🎓</span>
                 <span>Lump-Sum PTPTN / Biasiswa Converter</span>
               </h3>
-              <span className="px-3 py-1 bg-[#10D989] border-[2px] border-black rounded-lg font-black text-xs shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+              <span className="px-3 py-1 bg-[#FEF08A] border-[2px] border-black rounded-full font-black text-xs shadow-[2px_2px_0px_#0F172A]">
                 ⚡ Bulanan: {fmtRM(pinjamanBulanan)}/bln
               </span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-[#F3F4F6] border-[2px] border-black rounded-xl p-3.5 flex flex-col gap-1.5">
+              <div className="bg-white border-[2px] border-black rounded-2xl p-3.5 flex flex-col gap-1.5">
                 <label className="font-black text-xs text-black">
                   🏅 Masuk Satu Sem (RM)
                 </label>
-                <div className="flex items-center bg-white border-[2px] border-black rounded-lg px-3 py-1.5">
-                  <span className="font-black text-neutral-500 mr-2">RM</span>
+                <div className="flex items-center bg-[#F7F9F6] border-[2px] border-black rounded-xl px-3 py-1.5">
+                  <span className="font-black text-slate-500 mr-2">RM</span>
                   <input
                     type="number"
                     min={0}
@@ -1345,12 +1344,12 @@ export const Tab3Bajet: React.FC<Tab3Props> = ({
                 </div>
               </div>
 
-              <div className="bg-[#F3F4F6] border-[2px] border-black rounded-xl p-3.5 flex flex-col gap-1.5">
+              <div className="bg-pink-100 border-[2px] border-black rounded-2xl p-3.5 flex flex-col gap-1.5">
                 <label className="font-black text-xs text-black">
                   🧾 Tolak Yuran &amp; Kolej (RM)
                 </label>
-                <div className="flex items-center bg-white border-[2px] border-black rounded-lg px-3 py-1.5">
-                  <span className="font-black text-neutral-500 mr-2">RM</span>
+                <div className="flex items-center bg-white border-[2px] border-black rounded-xl px-3 py-1.5">
+                  <span className="font-black text-slate-500 mr-2">RM</span>
                   <input
                     type="number"
                     min={0}
@@ -1363,7 +1362,7 @@ export const Tab3Bajet: React.FC<Tab3Props> = ({
                 </div>
               </div>
 
-              <div className="bg-[#F3F4F6] border-[2px] border-black rounded-xl p-3.5 flex flex-col justify-between gap-1.5">
+              <div className="bg-white border-[2px] border-black rounded-2xl p-3.5 flex flex-col justify-between gap-1.5">
                 <label className="font-black text-xs text-black">
                   📆 Tempoh Sem ({normalizedBudget.minggu} Minggu)
                 </label>
@@ -1373,10 +1372,10 @@ export const Tab3Bajet: React.FC<Tab3Props> = ({
                       key={w}
                       type="button"
                       onClick={() => updateBag('minggu', w)}
-                      className={`py-1.5 border-[2px] border-black rounded-lg font-black text-xs cursor-pointer ${
+                      className={`py-1.5 border-[2px] border-black rounded-xl font-black text-xs cursor-pointer ${
                         normalizedBudget.minggu === w
-                          ? 'bg-[#FDE047] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]'
-                          : 'bg-white hover:bg-neutral-200'
+                          ? 'bg-[#FEF08A] shadow-[2px_2px_0px_#0F172A]'
+                          : 'bg-[#F7F9F6] hover:bg-slate-200'
                       }`}
                     >
                       {w}w
@@ -1386,7 +1385,7 @@ export const Tab3Bajet: React.FC<Tab3Props> = ({
               </div>
             </div>
 
-            <div className="text-xs font-extrabold text-neutral-700 flex items-center justify-between flex-wrap gap-2 px-1">
+            <div className="text-xs font-extrabold text-slate-700 flex items-center justify-between flex-wrap gap-2 px-1">
               <span>
                 Baki bersih satu sem: <b>{fmtRM(bakiPinjamanSem)}</b>
               </span>
@@ -1397,19 +1396,19 @@ export const Tab3Bajet: React.FC<Tab3Props> = ({
           </div>
 
           {/* Section 2: Elaun Keluarga & Side Hustle */}
-          <div className="bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-5 flex flex-col gap-3.5">
+          <div className="bg-[#C8F7E1] border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-5 flex flex-col gap-3.5">
             <h3 className="text-base sm:text-lg font-black text-black flex items-center gap-2">
               <span>🔁</span>
               <span>Duit Poket Bulanan (Parent &amp; Side Hustle)</span>
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-[#F3F4F6] border-[2px] border-black rounded-xl p-3.5 flex flex-col gap-1.5">
+              <div className="bg-white border-[2px] border-black rounded-2xl p-3.5 flex flex-col gap-1.5">
                 <label className="font-black text-xs text-black">
                   👨‍👩‍👧 Elaun Mak Ayah (RM / bulan)
                 </label>
-                <div className="flex items-center bg-white border-[2px] border-black rounded-lg px-3 py-1.5">
-                  <span className="font-black text-neutral-500 mr-2">RM</span>
+                <div className="flex items-center bg-[#F7F9F6] border-[2px] border-black rounded-xl px-3 py-1.5">
+                  <span className="font-black text-slate-500 mr-2">RM</span>
                   <input
                     type="number"
                     min={0}
@@ -1422,12 +1421,12 @@ export const Tab3Bajet: React.FC<Tab3Props> = ({
                 </div>
               </div>
 
-              <div className="bg-[#F3F4F6] border-[2px] border-black rounded-xl p-3.5 flex flex-col gap-1.5">
+              <div className="bg-white border-[2px] border-black rounded-2xl p-3.5 flex flex-col gap-1.5">
                 <label className="font-black text-xs text-black">
                   💻 Side Hustle / Part-time (RM / bulan)
                 </label>
-                <div className="flex items-center bg-white border-[2px] border-black rounded-lg px-3 py-1.5">
-                  <span className="font-black text-neutral-500 mr-2">RM</span>
+                <div className="flex items-center bg-[#F7F9F6] border-[2px] border-black rounded-xl px-3 py-1.5">
+                  <span className="font-black text-slate-500 mr-2">RM</span>
                   <input
                     type="number"
                     min={0}
@@ -1446,8 +1445,8 @@ export const Tab3Bajet: React.FC<Tab3Props> = ({
           </div>
 
           {/* Summary Output Card */}
-          <div className="bg-[#FDE047] border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-5 text-center flex flex-col items-center gap-2">
-            <span className="px-3 py-0.5 bg-white border-[2px] border-black rounded-md font-black text-xs uppercase tracking-wider">
+          <div className="bg-[#FEF08A] border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-5 text-center flex flex-col items-center gap-2">
+            <span className="px-3 py-0.5 bg-white border-[2px] border-black rounded-full font-black text-xs uppercase tracking-wider">
               TOTAL THE BAG KAU SEBULAN
             </span>
 
@@ -1459,7 +1458,7 @@ export const Tab3Bajet: React.FC<Tab3Props> = ({
             <button
               type="button"
               onClick={() => setSubtab(1)}
-              className="neo-btn mt-1 px-7 py-3 bg-[#10D989] rounded-xl font-black text-sm sm:text-base text-black cursor-pointer"
+              className="neo-btn mt-1 px-7 py-3 bg-[#10D989] rounded-2xl font-black text-sm sm:text-base text-black cursor-pointer"
             >
               Next: Check Duit Terbang (The Damage) 💸
             </button>
@@ -1480,14 +1479,14 @@ export const Tab3Bajet: React.FC<Tab3Props> = ({
               Duit Terbang: Ke Mana Duit Kau Pergi? 💸
             </h2>
 
-            <div className="inline-flex p-1 bg-white border-[3px] border-black rounded-xl shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] gap-1">
+            <div className="inline-flex p-1 bg-white border-[3px] border-black rounded-full shadow-[3px_3px_0px_#0F172A] gap-1">
               <button
                 type="button"
                 onClick={() => handleTogglePresetMode('manual')}
-                className={`px-3 py-1.5 rounded-lg font-black text-xs cursor-pointer ${
+                className={`px-3 py-1.5 rounded-full font-black text-xs cursor-pointer ${
                   normalizedBudget.mode === 'manual'
-                    ? 'bg-[#FDE047] border-[2px] border-black'
-                    : 'hover:bg-neutral-100'
+                    ? 'bg-purple-200 border-[2px] border-black'
+                    : 'hover:bg-slate-100'
                 }`}
               >
                 ✍️ Adjust Sendiri
@@ -1495,10 +1494,10 @@ export const Tab3Bajet: React.FC<Tab3Props> = ({
               <button
                 type="button"
                 onClick={() => handleTogglePresetMode('auto')}
-                className={`px-3 py-1.5 rounded-lg font-black text-xs cursor-pointer ${
+                className={`px-3 py-1.5 rounded-full font-black text-xs cursor-pointer ${
                   normalizedBudget.mode === 'auto'
-                    ? 'bg-[#10D989] border-[2px] border-black'
-                    : 'hover:bg-neutral-100'
+                    ? 'bg-[#C8F7E1] border-[2px] border-black'
+                    : 'hover:bg-slate-100'
                 }`}
               >
                 🤖 Autopilot 50/30/20
@@ -1506,7 +1505,7 @@ export const Tab3Bajet: React.FC<Tab3Props> = ({
             </div>
           </div>
 
-          {/* Violent Red Warning Banner if Healing / Wants > 30% */}
+          {/* Red Warning Banner if Healing / Wants > 30% */}
           <AnimatePresence>
             {isWantsOverLimit && (
               <motion.div
@@ -1518,7 +1517,7 @@ export const Tab3Bajet: React.FC<Tab3Props> = ({
                 }}
                 exit={{ scale: 0.95, opacity: 0 }}
                 transition={{ duration: 0.45 }}
-                className="bg-[#FF4766] text-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-4 flex items-center gap-3"
+                className="bg-[#FFE4E6] text-black border-[3px] border-black rounded-2xl shadow-[5px_5px_0px_#0F172A] p-4 flex items-center gap-3"
               >
                 <span className="text-3xl shrink-0">🚨</span>
                 <div className="font-black text-xs sm:text-sm leading-snug">
@@ -1532,12 +1531,12 @@ export const Tab3Bajet: React.FC<Tab3Props> = ({
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-start">
             {/* Komitmen Wajib (Needs) */}
-            <div className="bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-4 flex flex-col gap-3">
-              <div className="bg-[#3B82F6] text-white border-[2px] border-black rounded-xl p-3 flex items-center justify-between gap-2">
+            <div className="bg-blue-100 border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-4 flex flex-col gap-3">
+              <div className="bg-white border-[2px] border-black rounded-2xl p-3 flex items-center justify-between gap-2">
                 <span className="font-black text-xs sm:text-sm">
                   🏠 KOMITMEN WAJIB (NEEDS)
                 </span>
-                <span className="px-2.5 py-0.5 bg-white text-black border-[2px] border-black rounded-md font-mono-rubik text-xs">
+                <span className="px-2.5 py-0.5 bg-blue-200 text-black border-[2px] border-black rounded-full font-mono-rubik text-xs">
                   {fmtRM(sumNeeds)}
                 </span>
               </div>
@@ -1549,15 +1548,15 @@ export const Tab3Bajet: React.FC<Tab3Props> = ({
                 return (
                   <div
                     key={item.key}
-                    className="bg-[#F3F4F6] border-[2px] border-black rounded-xl p-3 flex flex-col gap-1.5"
+                    className="bg-white border-[2px] border-black rounded-2xl p-3 flex flex-col gap-1.5"
                   >
                     <div className="flex items-center justify-between gap-2">
                       <span className="font-extrabold text-xs sm:text-sm flex items-center gap-1.5">
                         <span>{item.emoji}</span>
                         <span>{item.label}</span>
                       </span>
-                      <div className="flex items-center bg-white border-[2px] border-black rounded-lg px-2 py-0.5 w-24 shrink-0">
-                        <span className="text-[11px] font-black text-neutral-500 mr-1">
+                      <div className="flex items-center bg-[#F7F9F6] border-[2px] border-black rounded-xl px-2 py-0.5 w-24 shrink-0">
+                        <span className="text-[11px] font-black text-slate-500 mr-1">
                           RM
                         </span>
                         <input
@@ -1589,7 +1588,7 @@ export const Tab3Bajet: React.FC<Tab3Props> = ({
                       style={
                         {
                           '--p': `${pct}%`,
-                          '--fill': '#3B82F6',
+                          '--fill': '#10D989',
                         } as React.CSSProperties
                       }
                       className="chunky thin"
@@ -1600,22 +1599,22 @@ export const Tab3Bajet: React.FC<Tab3Props> = ({
             </div>
 
             {/* Healing & Gaya Hidup (Wants) */}
-            <div className="bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-4 flex flex-col gap-3">
-              <div className="bg-[#FB923C] text-black border-[2px] border-black rounded-xl p-3 flex flex-wrap items-center justify-between gap-2">
+            <div className="bg-pink-100 border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-4 flex flex-col gap-3">
+              <div className="bg-white border-[2px] border-black rounded-2xl p-3 flex flex-wrap items-center justify-between gap-2">
                 <span className="font-black text-xs sm:text-sm">
                   ☕ HEALING &amp; LIFESTYLE (WANTS)
                 </span>
                 <div className="flex items-center gap-1.5">
                   <span
-                    className={`px-2.5 py-0.5 border-[2px] border-black rounded-md font-mono-rubik text-xs ${
+                    className={`px-2.5 py-0.5 border-[2px] border-black rounded-full font-mono-rubik text-xs ${
                       isWantsOverLimit
                         ? 'bg-[#FF4766] text-white'
-                        : 'bg-white text-black'
+                        : 'bg-pink-200 text-black'
                     }`}
                   >
                     {fmtRM(sumWants)}
                   </span>
-                  <span className="px-2 py-0.5 bg-[#FDE047] border-[2px] border-black rounded-md font-black text-[11px]">
+                  <span className="px-2 py-0.5 bg-[#FEF08A] border-[2px] border-black rounded-full font-black text-[11px]">
                     Max 30%: {fmtRM(hadSelamat30)}
                   </span>
                 </div>
@@ -1628,15 +1627,15 @@ export const Tab3Bajet: React.FC<Tab3Props> = ({
                 return (
                   <div
                     key={item.key}
-                    className="bg-[#F3F4F6] border-[2px] border-black rounded-xl p-3 flex flex-col gap-1.5"
+                    className="bg-white border-[2px] border-black rounded-2xl p-3 flex flex-col gap-1.5"
                   >
                     <div className="flex items-center justify-between gap-2">
                       <span className="font-extrabold text-xs sm:text-sm flex items-center gap-1.5">
                         <span>{item.emoji}</span>
                         <span>{item.label}</span>
                       </span>
-                      <div className="flex items-center bg-white border-[2px] border-black rounded-lg px-2 py-0.5 w-24 shrink-0">
-                        <span className="text-[11px] font-black text-neutral-500 mr-1">
+                      <div className="flex items-center bg-[#F7F9F6] border-[2px] border-black rounded-xl px-2 py-0.5 w-24 shrink-0">
+                        <span className="text-[11px] font-black text-slate-500 mr-1">
                           RM
                         </span>
                         <input
@@ -1674,7 +1673,7 @@ export const Tab3Bajet: React.FC<Tab3Props> = ({
                       style={
                         {
                           '--p': `${pct}%`,
-                          '--fill': '#FB923C',
+                          '--fill': '#FF4766',
                         } as React.CSSProperties
                       }
                       className="chunky thin"
@@ -1685,9 +1684,9 @@ export const Tab3Bajet: React.FC<Tab3Props> = ({
             </div>
           </div>
 
-          <div className="bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div className="bg-white border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-4 flex flex-col sm:flex-row items-center justify-between gap-3">
             <div className="text-center sm:text-left">
-              <div className="text-[11px] font-black uppercase text-neutral-600">
+              <div className="text-[11px] font-black uppercase text-slate-600">
                 TOTAL DUIT TERBANG SEBULAN
               </div>
               <div className="font-mono-rubik text-xl sm:text-2xl text-black">
@@ -1706,7 +1705,7 @@ export const Tab3Bajet: React.FC<Tab3Props> = ({
                   setTimeout(triggerShake, 120);
                 }
               }}
-              className="neo-btn px-7 py-3 bg-[#10D989] rounded-xl font-black text-sm sm:text-base text-black cursor-pointer"
+              className="neo-btn px-7 py-3 bg-[#10D989] rounded-2xl font-black text-sm sm:text-base text-black cursor-pointer"
             >
               Tengok Baki Bersih (Vibe Check) 👀
             </button>
@@ -1723,16 +1722,16 @@ export const Tab3Bajet: React.FC<Tab3Props> = ({
           className="flex flex-col gap-5"
         >
           {surplus < 0 ? (
-            <div className="bg-[#FF4766] text-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 sm:p-8 text-center flex flex-col items-center gap-3">
-              <span className="px-3.5 py-1 bg-black text-white border-[2px] border-white rounded-lg font-black text-xs uppercase tracking-wider">
+            <div className="bg-[#FFE4E6] text-black border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-6 sm:p-8 text-center flex flex-col items-center gap-3">
+              <span className="px-4 py-1 bg-[#FF4766] text-white border-[2px] border-black rounded-full font-black text-xs uppercase tracking-wider">
                 TERCIDUK BRO 💀 (DEFISIT BULANAN)
               </span>
 
-              <div className="font-mono-rubik text-4xl sm:text-6xl text-white leading-none drop-shadow-[4px_4px_0px_#000000]">
+              <div className="font-mono-rubik text-4xl sm:text-6xl text-[#FF4766] leading-none drop-shadow-[3px_3px_0px_#FFFFFF]">
                 -RM {Math.round(Math.abs(surplus)).toLocaleString('en-MY')}
               </div>
 
-              <p className="text-sm sm:text-lg font-black text-white max-w-xl leading-snug">
+              <p className="text-sm sm:text-lg font-black text-black max-w-xl leading-snug">
                 Terciduk Bro 💀 Kau short RM {Math.round(Math.abs(surplus))}{' '}
                 sebulan sebab belanja lagi laju dari duit masuk. Potong sikit
                 duit healing sebelum pokai hujung bulan!
@@ -1741,14 +1740,14 @@ export const Tab3Bajet: React.FC<Tab3Props> = ({
               <button
                 type="button"
                 onClick={() => setSubtab(1)}
-                className="neo-btn mt-1 px-7 py-3 bg-[#FDE047] text-black rounded-xl font-black text-sm sm:text-base cursor-pointer"
+                className="neo-btn mt-1 px-7 py-3 bg-[#FEF08A] text-black rounded-2xl font-black text-sm sm:text-base cursor-pointer"
               >
                 Adjust Bajet Balik 🔧
               </button>
             </div>
           ) : (
-            <div className="bg-[#10D989] text-black border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 sm:p-8 text-center flex flex-col items-center gap-3">
-              <span className="px-3.5 py-1 bg-white text-black border-[2px] border-black rounded-lg font-black text-xs uppercase tracking-wider shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+            <div className="bg-[#D1FAE5] text-black border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-6 sm:p-8 text-center flex flex-col items-center gap-3">
+              <span className="px-4 py-1 bg-white text-black border-[2px] border-black rounded-full font-black text-xs uppercase tracking-wider shadow-[2px_2px_0px_#0F172A]">
                 BAG SECURED ✅ (BAKI BERSIH BULANAN)
               </span>
 
@@ -1764,7 +1763,7 @@ export const Tab3Bajet: React.FC<Tab3Props> = ({
               <button
                 type="button"
                 onClick={() => onNavigate('t4')}
-                className="neo-btn mt-1 px-7 py-3 bg-[#FDE047] text-black rounded-xl font-black text-sm sm:text-base cursor-pointer"
+                className="neo-btn mt-1 px-7 py-3 bg-[#10D989] text-black rounded-2xl font-black text-sm sm:text-base cursor-pointer"
               >
                 Proceed Mission: Get Rich 🚀
               </button>
@@ -1773,18 +1772,18 @@ export const Tab3Bajet: React.FC<Tab3Props> = ({
 
           {/* Comparison Split Widget */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 items-center text-center">
-            <div className="bg-white border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-4">
+            <div className="bg-[#C8F7E1] border-[3px] border-black rounded-2xl shadow-[4px_4px_0px_#0F172A] p-4">
               <div className="text-xs font-black uppercase tracking-wider">
                 💰 DUIT MASUK
               </div>
-              <div className="font-mono-rubik text-xl sm:text-2xl mt-1 text-[#10D989]">
+              <div className="font-mono-rubik text-xl sm:text-2xl mt-1 text-black">
                 {fmtRM(totalIn)}
               </div>
             </div>
 
             <div className="font-mono-rubik text-xl text-black">VS</div>
 
-            <div className="bg-white border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-4">
+            <div className="bg-pink-100 border-[3px] border-black rounded-2xl shadow-[4px_4px_0px_#0F172A] p-4">
               <div className="text-xs font-black uppercase tracking-wider">
                 💸 DUIT TERBANG
               </div>
@@ -1814,18 +1813,28 @@ export interface SavedGoalItem {
 }
 
 const VIDEO_GOALS = [
-  { k: 'travel', e: '✈️', n: 'Healing / Travel', bg: 'bg-[#3B82F6] text-white' },
+  {
+    k: 'travel',
+    e: '✈️',
+    n: 'Healing / Travel',
+    bg: 'bg-[#BEE3FF] text-black',
+  },
   {
     k: 'big',
     e: '🚗',
     n: 'Ride / Kereta',
     s: 'Kereta, motor, etc',
-    bg: 'bg-[#FB923C] text-black',
+    bg: 'bg-[#FFD9B8] text-black',
   },
-  { k: 'tech', e: '💻', n: 'Tech Gear / Gadget', bg: 'bg-[#FDE047] text-black' },
-  { k: 'wed', e: '💍', n: 'Dana Kahwin', bg: 'bg-[#FF4766] text-white' },
-  { k: 'edu', e: '🎓', n: 'Education', bg: 'bg-[#DBEAFE] text-black' },
-  { k: 'ef', e: '🛡️', n: 'Emergency Fund', bg: 'bg-[#10D989] text-black' },
+  {
+    k: 'tech',
+    e: '💻',
+    n: 'Tech Gear / Gadget',
+    bg: 'bg-[#DCCBFF] text-black',
+  },
+  { k: 'wed', e: '💍', n: 'Dana Kahwin', bg: 'bg-[#FFC9E0] text-black' },
+  { k: 'edu', e: '🎓', n: 'Education', bg: 'bg-[#FFF0A3] text-black' },
+  { k: 'ef', e: '🛡️', n: 'Emergency Fund', bg: 'bg-[#C8F7E1] text-black' },
   {
     k: 'custom',
     e: '✍️',
@@ -1842,15 +1851,9 @@ const GOAL_RATES: Record<RiskKey, number> = {
 };
 
 const GOAL_RISK_COLORS: Record<RiskKey, string> = {
-  safe: '#DBEAFE',
-  mid: '#FDE047',
-  aggr: '#FB923C',
-};
-
-const GOAL_RISK_NAMES: Record<RiskKey, string> = {
-  safe: '🛡️ Safe (5%)',
-  mid: '⚖️ Balanced (8.5%)',
-  aggr: '🎢 Aggressive (12.5%)',
+  safe: '#BEE3FF',
+  mid: '#DCCBFF',
+  aggr: '#FFC9E0',
 };
 
 interface Tab4Props {
@@ -2034,7 +2037,7 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
             initial={{ y: 80, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 80, opacity: 0 }}
-            className="fixed left-1/2 -translate-x-1/2 bottom-6 z-50 px-5 py-3 bg-[#FDE047] border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-black text-xs sm:text-sm text-black whitespace-nowrap"
+            className="fixed left-1/2 -translate-x-1/2 bottom-6 z-50 px-5 py-3 bg-[#FEF08A] border-[3px] border-black rounded-full shadow-[4px_4px_0px_#0F172A] font-black text-xs sm:text-sm text-black whitespace-nowrap"
           >
             {toastMsg}
           </motion.div>
@@ -2043,12 +2046,12 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
 
       {/* Top Header */}
       <div className="text-center flex flex-col items-center gap-2 pt-1">
-        <span className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-[#FDE047] border-[3px] border-black rounded-xl shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] font-black text-xs text-black uppercase">
+        <span className="inline-flex items-center gap-1.5 px-4 py-1 bg-[#FEF08A] border-[3px] border-black rounded-full shadow-[3px_3px_0px_#0F172A] font-black text-xs sm:text-sm text-black">
           🎯 Mission Get Rich
         </span>
-        <h1 className="text-xl sm:text-3xl font-black text-black tracking-tight leading-tight">
+        <h1 className="text-2xl sm:text-4xl font-black text-black tracking-tight leading-tight">
           Nak Kaya?{' '}
-          <span className="inline-block bg-[#10D989] px-3 py-0.5 border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] -rotate-1">
+          <span className="inline-block bg-[#10D989] px-3 py-0.5 border-[3px] border-black rounded-2xl shadow-[4px_4px_0px_#0F172A] -rotate-1">
             Set Target.
           </span>
         </h1>
@@ -2056,7 +2059,7 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
 
       {/* Subnav Pill Bar */}
       <div className="flex justify-center">
-        <div className="inline-flex gap-1.5 p-1.5 bg-white border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+        <div className="inline-flex gap-1.5 p-1.5 bg-white border-[3px] border-black rounded-full shadow-[4px_4px_0px_#0F172A]">
           {(['Target 🎯', 'Blueprint 📈', 'Saved Goals 💾'] as const).map(
             (label, idx) => {
               const isOn = subtab === idx;
@@ -2065,10 +2068,10 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
                   key={idx}
                   type="button"
                   onClick={() => setSubtab(idx as 0 | 1 | 2)}
-                  className={`px-4 py-2 rounded-lg font-black text-xs sm:text-sm transition-all cursor-pointer ${
+                  className={`px-4 py-2 rounded-full font-black text-xs sm:text-sm transition-all cursor-pointer ${
                     isOn
-                      ? 'bg-[#10D989] text-black border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]'
-                      : 'border-[2px] border-transparent hover:bg-[#FDE047]'
+                      ? 'bg-[#DCCBFF] text-black border-[2px] border-black shadow-[2px_2px_0px_#0F172A]'
+                      : 'border-[2px] border-transparent hover:bg-slate-100'
                   }`}
                 >
                   {label}
@@ -2081,7 +2084,7 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
 
       {/* PANEL 0: TARGET WIZARD (3 SLIDING STEPS + 3D FLIP TILES) */}
       {subtab === 0 && (
-        <div className="bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-5 flex flex-col gap-4">
+        <div className="bg-white border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-5 flex flex-col gap-4">
           {/* 3 Wizard Progress Dots */}
           <div className="flex justify-center gap-2.5">
             {[0, 1, 2].map((dotIdx) => (
@@ -2090,13 +2093,13 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
                 className={`h-3.5 border-[2px] border-black transition-all duration-300 ${
                   wizStep === dotIdx
                     ? 'w-10 rounded-full bg-[#10D989]'
-                    : 'w-3.5 rounded-full bg-[#F3F4F6]'
+                    : 'w-3.5 rounded-full bg-[#F7F9F6]'
                 }`}
               />
             ))}
           </div>
 
-          <div className="overflow-hidden rounded-xl">
+          <div className="overflow-hidden rounded-2xl">
             <div
               style={{
                 transform: `translateX(-${wizStep * 100}%)`,
@@ -2129,7 +2132,7 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
                           }`}
                         >
                           <div
-                            className={`absolute inset-0 backface-hidden ${g.bg} border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex flex-col items-center justify-center gap-1 p-2 font-black hover:-translate-y-0.5 transition-transform`}
+                            className={`absolute inset-0 backface-hidden ${g.bg} border-[3px] border-black rounded-2xl shadow-[4px_4px_0px_#0F172A] flex flex-col items-center justify-center gap-1 p-2 font-black hover:-translate-y-0.5 transition-transform`}
                           >
                             <span className="text-2xl sm:text-3xl">{g.e}</span>
                             <span className="text-xs sm:text-sm leading-tight">
@@ -2142,7 +2145,7 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
                             )}
                           </div>
 
-                          <div className="absolute inset-0 backface-hidden rotate-y-180 bg-[#10D989] text-black border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex flex-col items-center justify-center gap-1 p-2 font-black">
+                          <div className="absolute inset-0 backface-hidden rotate-y-180 bg-[#10D989] text-black border-[3px] border-black rounded-2xl shadow-[4px_4px_0px_#0F172A] flex flex-col items-center justify-center gap-1 p-2 font-black">
                             <span className="text-2xl sm:text-3xl">{g.e}</span>
                             <span className="text-xs sm:text-sm">
                               Locked in ✅
@@ -2165,7 +2168,7 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
                       value={customTxt}
                       onChange={(e) => setCustomTxt(e.target.value)}
                       placeholder="cth: Konsert Coldplay 🎤"
-                      className="w-full border-[3px] border-black rounded-xl px-4 py-2.5 text-sm sm:text-base font-bold bg-[#F3F4F6] focus:bg-[#FDE047] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] outline-none"
+                      className="w-full border-[3px] border-black rounded-2xl px-4 py-2.5 text-sm sm:text-base font-bold bg-[#F7F9F6] focus:bg-[#FFF0A3] shadow-[4px_4px_0px_#0F172A] outline-none"
                     />
                   </div>
                 )}
@@ -2175,7 +2178,7 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
                     <button
                       type="button"
                       onClick={() => setWizStep(1)}
-                      className="neo-btn px-7 py-3 bg-[#10D989] rounded-xl font-black text-sm sm:text-base text-black cursor-pointer"
+                      className="neo-btn px-7 py-3 bg-[#10D989] rounded-2xl font-black text-sm sm:text-base text-black cursor-pointer"
                     >
                       Next ➡️
                     </button>
@@ -2190,7 +2193,7 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
                 </h2>
 
                 <div className="w-full max-w-md mt-1">
-                  <label className="flex items-center border-[3px] border-black rounded-xl bg-[#F3F4F6] focus-within:bg-[#FDE047] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] px-4 py-2.5 transition-colors">
+                  <label className="flex items-center border-[3px] border-black rounded-2xl bg-[#F7F9F6] focus-within:bg-[#FFF0A3] shadow-[4px_4px_0px_#0F172A] px-4 py-2.5 transition-colors">
                     <span className="font-black text-xl sm:text-2xl mr-2">
                       RM
                     </span>
@@ -2218,7 +2221,7 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
                         setAmtErr('');
                         burstEmoji(e.clientX, e.clientY, '💰', 4);
                       }}
-                      className="px-3.5 py-1.5 bg-[#FDE047] border-[2px] border-black rounded-lg shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] font-black text-xs cursor-pointer"
+                      className="px-3.5 py-1.5 bg-[#FFF0A3] border-[2px] border-black rounded-full shadow-[3px_3px_0px_#0F172A] font-black text-xs cursor-pointer"
                     >
                       RM{val / 1000}K
                     </button>
@@ -2235,14 +2238,14 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
                   <button
                     type="button"
                     onClick={() => setWizStep(0)}
-                    className="neo-btn px-5 py-2.5 bg-white rounded-xl font-black text-xs sm:text-sm cursor-pointer"
+                    className="neo-btn px-5 py-2.5 bg-white rounded-2xl font-black text-xs sm:text-sm cursor-pointer"
                   >
                     ⬅️ Back
                   </button>
                   <button
                     type="button"
                     onClick={handleStep1Next}
-                    className="neo-btn px-7 py-2.5 bg-[#10D989] rounded-xl font-black text-sm sm:text-base cursor-pointer"
+                    className="neo-btn px-7 py-2.5 bg-[#10D989] rounded-2xl font-black text-sm sm:text-base cursor-pointer"
                   >
                     Next ➡️
                   </button>
@@ -2259,12 +2262,12 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
                   <button
                     type="button"
                     onClick={() => setYearInput((y) => y - 1)}
-                    className="w-12 h-12 rounded-xl bg-[#FF4766] text-white border-[3px] border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] font-black text-xl flex items-center justify-center cursor-pointer"
+                    className="w-12 h-12 rounded-2xl bg-[#FFC9E0] text-black border-[3px] border-black shadow-[3px_3px_0px_#0F172A] font-black text-xl flex items-center justify-center cursor-pointer"
                   >
                     −
                   </button>
 
-                  <label className="w-44 border-[3px] border-black rounded-xl bg-[#F3F4F6] focus-within:bg-[#FDE047] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] py-2 px-3">
+                  <label className="w-44 border-[3px] border-black rounded-2xl bg-[#F7F9F6] focus-within:bg-[#FFF0A3] shadow-[4px_4px_0px_#0F172A] py-2 px-3">
                     <input
                       type="number"
                       value={yearInput}
@@ -2280,7 +2283,7 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
                   <button
                     type="button"
                     onClick={() => setYearInput((y) => y + 1)}
-                    className="w-12 h-12 rounded-xl bg-[#10D989] text-black border-[3px] border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] font-black text-xl flex items-center justify-center cursor-pointer"
+                    className="w-12 h-12 rounded-2xl bg-[#C8F7E1] text-black border-[3px] border-black shadow-[3px_3px_0px_#0F172A] font-black text-xl flex items-center justify-center cursor-pointer"
                   >
                     +
                   </button>
@@ -2292,7 +2295,7 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
                       key={addY}
                       type="button"
                       onClick={() => setYearInput(currentYear + addY)}
-                      className="px-3.5 py-1.5 bg-[#3B82F6] text-white border-[2px] border-black rounded-lg shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] font-black text-xs cursor-pointer"
+                      className="px-3.5 py-1.5 bg-[#BEE3FF] text-black border-[2px] border-black rounded-full shadow-[3px_3px_0px_#0F172A] font-black text-xs cursor-pointer"
                     >
                       +{addY} tahun
                     </button>
@@ -2319,14 +2322,14 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
                   <button
                     type="button"
                     onClick={() => setWizStep(1)}
-                    className="neo-btn px-5 py-2.5 bg-white rounded-xl font-black text-xs sm:text-sm cursor-pointer"
+                    className="neo-btn px-5 py-2.5 bg-white rounded-2xl font-black text-xs sm:text-sm cursor-pointer"
                   >
                     ⬅️ Back
                   </button>
                   <button
                     type="button"
                     onClick={handleGenerateBlueprint}
-                    className="neo-btn px-7 py-3 bg-[#10D989] rounded-xl font-black text-sm sm:text-base text-black cursor-pointer"
+                    className="neo-btn px-7 py-3 bg-[#10D989] rounded-2xl font-black text-sm sm:text-base text-black cursor-pointer"
                   >
                     Generate Blueprint Sekarang! 🚀
                   </button>
@@ -2341,16 +2344,16 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
       {subtab === 1 && (
         <div>
           {!bpReady ? (
-            <div className="bg-white border-[3px] border-dashed border-black rounded-2xl p-8 text-center flex flex-col items-center gap-3 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+            <div className="bg-white border-[3px] border-dashed border-black rounded-3xl p-8 text-center flex flex-col items-center gap-3 shadow-[5px_5px_0px_#0F172A]">
               <span className="text-5xl animate-bob">🎯</span>
               <h3 className="text-lg font-black">Set target dulu bro</h3>
-              <p className="text-xs font-bold text-neutral-600">
+              <p className="text-xs font-bold text-slate-600">
                 Pilih goal, amount, tahun. Then baru magic jadi.
               </p>
               <button
                 type="button"
                 onClick={() => setSubtab(0)}
-                className="neo-btn mt-1 px-5 py-2.5 bg-[#10D989] rounded-xl font-black text-xs sm:text-sm cursor-pointer"
+                className="neo-btn mt-1 px-5 py-2.5 bg-[#10D989] rounded-2xl font-black text-xs sm:text-sm cursor-pointer"
               >
                 Gi Set Target 🎯
               </button>
@@ -2358,27 +2361,32 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
           ) : (
             <div className="flex flex-col gap-4">
               <div className="text-center">
-                <span className="inline-flex items-center gap-1.5 px-4 py-1 bg-[#FDE047] border-[2px] border-black rounded-lg shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] font-black text-xs sm:text-sm">
+                <span className="inline-flex items-center gap-1.5 px-4 py-1 bg-[#FFF0A3] border-[2px] border-black rounded-full shadow-[3px_3px_0px_#0F172A] font-black text-xs sm:text-sm">
                   {bpGoal.e} {bpGoal.n} • {fmtRM(bpAmt)} • {bpYear}
                 </span>
               </div>
 
               {/* 3-Way Risk Profile Selector */}
-              <div className="grid grid-cols-3 border-[3px] border-black rounded-xl bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-1.5 max-w-2xl mx-auto w-full gap-1">
+              <div className="grid grid-cols-3 border-[3px] border-black rounded-full bg-white shadow-[4px_4px_0px_#0F172A] p-1.5 max-w-2xl mx-auto w-full gap-1">
                 {(
                   [
-                    ['safe', '🛡️ Safe', '5% setahun', 'bg-[#3B82F6] text-white'],
+                    [
+                      'safe',
+                      '🛡️ Safe',
+                      '5% setahun',
+                      'bg-[#BEE3FF] text-black',
+                    ],
                     [
                       'mid',
                       '⚖️ Balanced',
                       '8.5% setahun',
-                      'bg-[#FDE047] text-black',
+                      'bg-[#DCCBFF] text-black',
                     ],
                     [
                       'aggr',
                       '🎢 Aggressive',
                       '12.5% setahun',
-                      'bg-[#FB923C] text-black',
+                      'bg-[#FFC9E0] text-black',
                     ],
                   ] as const
                 ).map(([rk, label, sub, bg]) => {
@@ -2388,14 +2396,14 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
                       key={rk}
                       type="button"
                       onClick={() => setRisk(rk)}
-                      className={`py-2 px-2 rounded-lg font-black text-xs leading-tight transition-all cursor-pointer ${
+                      className={`py-2 px-2 rounded-full font-black text-xs leading-tight transition-all cursor-pointer ${
                         active
-                          ? `${bg} border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]`
-                          : 'border-[2px] border-transparent hover:bg-[#F3F4F6]'
+                          ? `${bg} border-[2px] border-black shadow-[2px_2px_0px_#0F172A]`
+                          : 'border-[2px] border-transparent hover:bg-slate-100'
                       }`}
                     >
                       <div>{label}</div>
-                      <small className="block text-[10px] opacity-85">
+                      <small className="block text-[10px] opacity-80">
                         {sub}
                       </small>
                     </button>
@@ -2404,21 +2412,21 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
               </div>
 
               {/* Monthly Target Readout */}
-              <div className="bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-5 text-center flex flex-col items-center gap-1">
+              <div className="bg-gradient-to-br from-[#C8F7E1] to-[#BEE3FF] border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-5 text-center flex flex-col items-center gap-1">
                 <div className="text-sm sm:text-base font-black uppercase">
                   Kau kena park setiap bulan:
                 </div>
-                <div className="font-mono-rubik text-4xl sm:text-6xl text-[#10D989] leading-none my-1 drop-shadow-[3px_3px_0px_#000000]">
+                <div className="font-mono-rubik text-4xl sm:text-6xl text-black leading-none my-1 drop-shadow-[3px_3px_0px_#FFFFFF]">
                   {fmtRM(pmt)}
                 </div>
 
                 <div className="mt-2">
                   {surplus >= pmt ? (
-                    <span className="inline-block px-4 py-1.5 bg-[#10D989] border-[2px] border-black rounded-lg font-black text-xs">
+                    <span className="inline-block px-4 py-1.5 bg-white border-[2px] border-black rounded-full font-black text-xs">
                       ✅ Baki bajet kau {fmtRM(surplus)}/bln. Cukup! Legit boleh.
                     </span>
                   ) : (
-                    <span className="inline-block px-4 py-1.5 bg-[#FF4766] text-white border-[2px] border-black rounded-lg font-black text-xs">
+                    <span className="inline-block px-4 py-1.5 bg-[#FFC9E0] text-black border-[2px] border-black rounded-full font-black text-xs">
                       😬 Baki bajet kau {fmtRM(surplus)}/bln. Kurang{' '}
                       {fmtRM(pmt - Math.max(0, surplus))}. Tambah tahun atau
                       potong healing.
@@ -2428,12 +2436,12 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
               </div>
 
               {/* Compound Magic Chart Card */}
-              <div className="bg-white border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-4 sm:p-5">
+              <div className="bg-white border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-4 sm:p-5">
                 <div className="flex items-center justify-between flex-wrap gap-2 mb-3">
                   <b className="font-black text-sm sm:text-base">
                     📈 Compound Magic
                   </b>
-                  <span className="text-xs font-extrabold text-neutral-700">
+                  <span className="text-xs font-extrabold text-slate-700">
                     🟩 Bag kau • ➖ Modal kau
                   </span>
                 </div>
@@ -2441,9 +2449,9 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
                 <div
                   style={{
                     background:
-                      'repeating-linear-gradient(0deg, #fff 0 39px, #e5e7eb 39px 40px)',
+                      'repeating-linear-gradient(0deg, #fff 0 39px, #eef2ec 39px 40px)',
                   }}
-                  className="relative h-60 sm:h-64 border-[3px] border-black rounded-xl overflow-hidden"
+                  className="relative h-60 sm:h-64 border-[3px] border-black rounded-2xl overflow-hidden"
                 >
                   <svg
                     viewBox="0 0 600 300"
@@ -2453,12 +2461,12 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
                     <path
                       d={chartData.area}
                       fill="#10D989"
-                      fillOpacity="0.5"
+                      fillOpacity="0.45"
                     />
                     <path
                       d={chartData.dep}
                       fill="none"
-                      stroke="#000000"
+                      stroke="#475569"
                       strokeWidth="3"
                       strokeDasharray="8 8"
                       vectorEffect="non-scaling-stroke"
@@ -2467,7 +2475,7 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
                       ref={pathRef}
                       d={chartData.line}
                       fill="none"
-                      stroke="#000000"
+                      stroke="#0F172A"
                       strokeWidth="5"
                       strokeLinejoin="round"
                       vectorEffect="non-scaling-stroke"
@@ -2486,7 +2494,7 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
 
                   <span
                     style={{ top: `${(chartData.ty / 300) * 100}%` }}
-                    className="absolute right-2.5 -translate-y-full bg-[#FDE047] border-[2px] border-black rounded-lg px-2.5 py-0.5 font-black text-xs"
+                    className="absolute right-2.5 -translate-y-full bg-[#FFF0A3] border-[2px] border-black rounded-full px-2.5 py-0.5 font-black text-xs"
                   >
                     🎯 {fmtRM(bpAmt)}
                   </span>
@@ -2508,9 +2516,9 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
                   <span>{bpYear} 🏁</span>
                 </div>
 
-                {/* 3 Bold Stat Boxes */}
+                {/* 3 Soft-Pop Stat Boxes */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-4">
-                  <div className="bg-[#3B82F6] text-white border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-3 text-center">
+                  <div className="bg-[#BEE3FF] text-black border-[3px] border-black rounded-2xl shadow-[4px_4px_0px_#0F172A] p-3 text-center">
                     <div className="text-[11px] font-black uppercase">
                       MODAL KAU 💵
                     </div>
@@ -2519,7 +2527,7 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
                     </div>
                   </div>
 
-                  <div className="bg-[#10D989] text-black border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-3 text-center">
+                  <div className="bg-[#C8F7E1] text-black border-[3px] border-black rounded-2xl shadow-[4px_4px_0px_#0F172A] p-3 text-center">
                     <div className="text-[11px] font-black uppercase">
                       FREE MONEY 🤑
                     </div>
@@ -2528,7 +2536,7 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
                     </div>
                   </div>
 
-                  <div className="bg-[#FDE047] text-black border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-3 text-center">
+                  <div className="bg-[#FFF0A3] text-black border-[3px] border-black rounded-2xl shadow-[4px_4px_0px_#0F172A] p-3 text-center">
                     <div className="text-[11px] font-black uppercase">
                       TEMPOH ⏳
                     </div>
@@ -2543,14 +2551,14 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
                 <button
                   type="button"
                   onClick={handleLockAndSave}
-                  className="neo-btn px-7 py-3.5 bg-[#10D989] rounded-xl font-black text-sm sm:text-base text-black cursor-pointer"
+                  className="neo-btn px-7 py-3.5 bg-[#10D989] rounded-2xl font-black text-sm sm:text-base text-black cursor-pointer"
                 >
                   Lock In &amp; Save Blueprint Ni 💾
                 </button>
                 <button
                   type="button"
                   onClick={() => onNavigate('t5')}
-                  className="neo-btn px-6 py-3.5 bg-[#FDE047] rounded-xl font-black text-sm sm:text-base text-black cursor-pointer"
+                  className="neo-btn px-6 py-3.5 bg-[#FEF08A] rounded-2xl font-black text-sm sm:text-base text-black cursor-pointer"
                 >
                   Next: Simulator Arcade 🕹️
                 </button>
@@ -2568,16 +2576,16 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
           </h2>
 
           {savedGoals.length === 0 ? (
-            <div className="bg-white border-[3px] border-dashed border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-8 text-center flex flex-col items-center gap-2.5">
+            <div className="bg-white border-[3px] border-dashed border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-8 text-center flex flex-col items-center gap-2.5">
               <span className="text-5xl animate-bob">🫙</span>
               <h3 className="text-lg font-black">Kosong lagi ngl</h3>
-              <p className="text-xs font-bold text-neutral-700 mb-2">
+              <p className="text-xs font-bold text-slate-600 mb-2">
                 Buat blueprint pertama kau. Literally 30 saat je.
               </p>
               <button
                 type="button"
                 onClick={() => setSubtab(0)}
-                className="neo-btn px-5 py-2.5 bg-[#10D989] rounded-xl font-black text-xs sm:text-sm cursor-pointer"
+                className="neo-btn px-5 py-2.5 bg-[#10D989] rounded-2xl font-black text-xs sm:text-sm cursor-pointer"
               >
                 Set Target 🎯
               </button>
@@ -2591,9 +2599,9 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
                   <div
                     key={x.id}
                     style={{
-                      backgroundColor: GOAL_RISK_COLORS[x.risk] || '#FDE047',
+                      backgroundColor: GOAL_RISK_COLORS[x.risk] || '#FFF0A3',
                     }}
-                    className="relative border-[3px] border-black rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-4 flex flex-col gap-2.5 overflow-hidden"
+                    className="relative border-[3px] border-black rounded-3xl shadow-[5px_5px_0px_#0F172A] p-4 flex flex-col gap-2.5 overflow-hidden"
                   >
                     <div className="flex justify-between items-start gap-2">
                       <span className="text-3xl">{x.e}</span>
@@ -2601,7 +2609,7 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
                         type="button"
                         onClick={() => setConfirmDeleteId(x.id)}
                         aria-label="Delete goal"
-                        className="w-10 h-10 rounded-xl bg-[#FF4766] text-white border-[3px] border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center text-base cursor-pointer"
+                        className="w-10 h-10 rounded-full bg-[#FF4766] text-white border-[3px] border-black shadow-[3px_3px_0px_#0F172A] flex items-center justify-center text-base cursor-pointer"
                       >
                         🗑️
                       </button>
@@ -2612,13 +2620,13 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
                     </h4>
 
                     <div className="flex flex-wrap gap-1.5">
-                      <span className="text-[11px] font-black border-[2px] border-black rounded-md px-2 py-0.5 bg-white">
+                      <span className="text-[11px] font-black border-[2px] border-black rounded-full px-2 py-0.5 bg-white">
                         🎯 {fmtRM(x.amt)}
                       </span>
-                      <span className="text-[11px] font-black border-[2px] border-black rounded-md px-2 py-0.5 bg-white">
+                      <span className="text-[11px] font-black border-[2px] border-black rounded-full px-2 py-0.5 bg-white">
                         🗓️ {x.year}
                       </span>
-                      <span className="text-[11px] font-black border-[2px] border-black rounded-md px-2 py-0.5 bg-white">
+                      <span className="text-[11px] font-black border-[2px] border-black rounded-full px-2 py-0.5 bg-white">
                         🅿️ {fmtRM(x.pmt)}/bln
                       </span>
                     </div>
@@ -2639,7 +2647,7 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
                     </div>
 
                     <div className="flex gap-2 mt-1">
-                      <label className="flex-1 flex items-center border-[2px] border-black rounded-lg bg-white px-2.5 py-1">
+                      <label className="flex-1 flex items-center border-[2px] border-black rounded-xl bg-white px-2.5 py-1">
                         <span className="text-xs font-black mr-1">RM</span>
                         <input
                           type="number"
@@ -2672,15 +2680,15 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
                           setTopupInputs({ ...topupInputs, [x.id]: '' });
                           burstEmoji(e.clientX, e.clientY, '💵', 5);
                         }}
-                        className="px-3 py-1 bg-[#10D989] border-[2px] border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] font-black text-xs cursor-pointer"
+                        className="px-3 py-1 bg-[#10D989] border-[2px] border-black rounded-xl shadow-[2px_2px_0px_#0F172A] font-black text-xs cursor-pointer"
                       >
                         + Add
                       </button>
                     </div>
 
-                    {/* Full-card Red Delete Confirmation Overlay */}
+                    {/* Full-card Soft Coral Delete Confirmation Overlay */}
                     {isConfirming && (
-                      <div className="absolute inset-0 bg-[#FF4766] text-white p-4 flex flex-col items-center justify-center text-center gap-2.5 z-10">
+                      <div className="absolute inset-0 bg-[#FFC9E0] text-black p-4 flex flex-col items-center justify-center text-center gap-2.5 z-10">
                         <div className="text-base font-black">
                           Kau sure nak delete ni? 😳
                         </div>
@@ -2688,7 +2696,7 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
                           <button
                             type="button"
                             onClick={() => setConfirmDeleteId(null)}
-                            className="px-3.5 py-1.5 bg-white text-black border-[2px] border-black rounded-lg font-black text-xs cursor-pointer"
+                            className="px-3.5 py-1.5 bg-white text-black border-[2px] border-black rounded-xl font-black text-xs cursor-pointer"
                           >
                             Batal
                           </button>
@@ -2701,7 +2709,7 @@ export const Tab4Goals: React.FC<Tab4Props> = ({
                               setConfirmDeleteId(null);
                               showToast('🗑️ Goal dah kena delete.');
                             }}
-                            className="px-3.5 py-1.5 bg-black text-white border-[2px] border-white rounded-lg font-black text-xs cursor-pointer"
+                            className="px-3.5 py-1.5 bg-[#FF4766] text-white border-[2px] border-black rounded-xl font-black text-xs cursor-pointer"
                           >
                             Delete 🗑️
                           </button>
